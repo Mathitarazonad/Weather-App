@@ -28,8 +28,9 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Built With](#built-with)
 - [Features](#features)
+  - [Built With](#built-with)
+- [Features](#features-1)
 - [How To Use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
@@ -46,6 +47,20 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 - What was your experience?
 - What have you learned/improved?
 - Your wisdom? :)
+
+## Features
+
+The user needs to be able of:
+- See city weather as default, their current location.
+- Search for a city.
+- See weather of today and the next 5 days.
+- See the date and location of the weather.
+- The min and max degree of each day.
+- Wind status and wind direction.
+- See the humidity percentage.
+- Have the visibility indicator.
+- The air pressure number.
+- Convert temperature in Celcius to Fahrenheit and vice versa (Optional).
 
 ### Built With
 
