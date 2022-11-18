@@ -1,4 +1,5 @@
 import LocationsMenu from "./components/OptionComponents/LocationsMenu";
+import Temperatures from "./components/OptionComponents/Temperatures";
 import TodayWeather from "./components/TodayWeather";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <TodayWeather />
       <LocationsMenu />
+      <Temperatures />
     </div>
   );
 }
