@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import locationsReducer from './locationSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     locations : locationsReducer
   },
 });
+
+export default store;
