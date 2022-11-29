@@ -4,12 +4,20 @@ import { BsFillRecordFill } from 'react-icons/bs';
 import { IoIosPin } from 'react-icons/io';
 import CloudBackground from '../images/Cloud-background.png';
 import { getWeatherImg } from './functions';
+import { useDispatch } from 'react-redux';
+import { setIfMenuOpen } from '../store/menuSlice';
 
 export default function TodayWeather() {
+  const dispatch = useDispatch()
+  
+  const handleClick = () => {
+    dispatch(setIfMenuOpen());
+  }
+
   return (
     <div className='today-weather-menu'>
       <div className='__locations-btns'>
-        <button className='search-btn'>
+        <button className='search-btn' onClick={() => handleClick()}>
           Search for places
         </button>
         <button className='get-position-btn'>
