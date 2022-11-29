@@ -1,13 +1,10 @@
-import LocationsMenu from "./components/OptionComponents/LocationsMenu";
-import Temperatures from "./components/OptionComponents/Temperatures";
-import TodayWeather from "./components/TodayWeather";
+import Temperatures from './components/OptionComponents/Temperatures';
+import Sidebar from './components/Sidebar';
 
 function App() {
-
   return (
     <div className="App">
-      <TodayWeather />
-      <LocationsMenu />
+      <Sidebar />
       <Temperatures />
     </div>
   );
