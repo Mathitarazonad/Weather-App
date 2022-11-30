@@ -5,7 +5,7 @@ export const weatherAPI = createApi({
   baseQuery : fetchBaseQuery({baseUrl : 'http://localhost:8000'}),
   endpoints : (builder) => ({
     getTodayWeather : builder.query({
-      query : ({latitude, longitude, temp, timezone}) => `/today?latitude=${latitude}&longitude=${longitude}&temperature=${temp ? 'celsius' : 'fahrenheit'}&timezone=${timezone}`
+      query : ({latitude, longitude, isCelsius, timezone}) => `/today?latitude=${latitude}&longitude=${longitude}&temperature=${isCelsius ? 'celsius' : 'fahrenheit'}&timezone=${timezone}`
     })
   })
 })
