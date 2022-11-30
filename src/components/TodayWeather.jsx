@@ -38,6 +38,8 @@ export default function TodayWeather() {
             <p>Today</p>
             <BsFillRecordFill />
             <p>Fri, 5 Jun</p>
+            <BsFillRecordFill />
+            <p>17:00</p>
           </div>
           <div className='-location'>
             <IoIosPin />
