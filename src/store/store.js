@@ -3,6 +3,7 @@ import locationsReducer from './locationSlice';
 import menuReducer from './menuSlice';
 import temperatureReducer from './temperatureSlice';
 import {weatherAPI} from '../apis/weatherApi';
+import { locationsAPI } from '../apis/locationsApi';
 
 const store = configureStore({
   reducer: {
@@ -10,9 +11,10 @@ const store = configureStore({
     menu : menuReducer,
     temperature : temperatureReducer,
     weatherAPI : weatherAPI.reducer,
+    locationsAPI : locationsAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(weatherAPI.middleware),
+    getDefaultMiddleware().concat(weatherAPI.middleware, locationsAPI.middleware),
 });
 
 export default store;
