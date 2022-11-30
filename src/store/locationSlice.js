@@ -2,12 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   searchedCity : '',
-  currentCity : 'New York',
-  currentCountry : 'US',
-  currentCoords : {
-    lat : 40.7127281,
-    lon: -74.0060152
-  }
+  current : {
+    city : 'New York',
+    country : 'us',
+    coords: {
+      latitude : 40.710335,
+      longitude : -73.99307
+    },
+    timezone: 'America/New_York'
+ }
 }
 
 const locationSlice = createSlice({
@@ -17,17 +20,13 @@ const locationSlice = createSlice({
     setSearchedCity : (state, action) => {
       state.searchedCity = action.payload;
     },
-    setCurrentCity : (state, action) => {
-      state.currentCity = action.payload;
-    },
-    setCurrentCountry : (state, action) => {
-      state.currentCountry = action.payload;
-    },
-    setCurrentCoords : (state, action) => {
-      [state.currentCoords.lat, state.currentCoords.lon] = action.payload;
+    setCurrentInfo : (state, action) => {
+      const {city, country, coords, timezone} = action.payload;
+      state.current.coords = {lat: coords[0], lon: coords[1]};
+      state.current = {city, country, timezone}
     }
   }
 });
 
 export default locationSlice.reducer;
-export const {setSearchedCity, setCurrentCity, setCurrentCountry, setCurrentCoords} = locationSlice.actions;
+export const {setSearchedCity, setCurrentInfo} = locationSlice.actions;
