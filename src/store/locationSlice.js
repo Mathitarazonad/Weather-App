@@ -20,13 +20,21 @@ const locationSlice = createSlice({
     setSearchedCity : (state, action) => {
       state.searchedCity = action.payload;
     },
-    setCurrentInfo : (state, action) => {
-      const {city, country, coords, timezone} = action.payload;
-      state.current.coords = {lat: coords[0], lon: coords[1]};
-      state.current = {city, country, timezone}
+    setCurrentLocationInfo : (state, action) => {
+      const {city, country, latitude, longitude, timezone} = action.payload;
+      state.current.city = city;
+      state.current.country = country;
+      state.current.timezone = timezone;
+      state.current.coords.latitude = latitude;
+      state.current.coords.longitude = longitude
+    },
+    setCurrentCoords: (state,action) => {
+      const {latitude, longitude} = action.payload
+      state.current.coords.latitude = latitude,
+      state.current.coords.longitude = longitude
     }
   }
 });
 
 export default locationSlice.reducer;
-export const {setSearchedCity, setCurrentInfo} = locationSlice.actions;
+export const {setSearchedCity, setCurrentLocationInfo, setCurrentCoords} = locationSlice.actions;
