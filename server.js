@@ -9,7 +9,7 @@ const geoapifyKey = process.env.GEOAPIFY_API_KEY;
 
 app.use(cors());
 
-app.get('/coords', (req, res) => {
+app.get('/city', (req, res) => {
   const [city, country] = [req.query.city, req.query.country];
   axios.get(`https://api.geoapify.com/v1/geocode/search?text=${city}&lang=en&limit=10&type=city&filter=countrycode:${country}&apiKey=${geoapifyKey}`,
       {
@@ -30,6 +30,11 @@ app.get('/today', (req, res) => {
   axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&temperature_unit=${temperature}&current_weather=true&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=${timezone}`)
   .then((resp) => res.json(resp.data));
 });
+
+app.get('/coords', (req, res) => {
+  const [latitude, longitude] = [req.query.latitude, req.query.longitude];
+  axios.get(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data))
+})
 
 app.listen(8000, () => {
   console.log('Servidor escuchando en puerto 8000');
