@@ -1,12 +1,12 @@
-import Clear from '../images/Clear.png';
-import MainlyClear from '../images/LightCloud.png';
-import Cloudy from '../images/HeavyCloud.png';
+import Clear from '../images/clear.png';
+import MainlyClear from '../images/lightCloud.png';
+import Cloudy from '../images/cloudy.png';
 import Shower from '../images/Shower.png';
 import LightRain from '../images/LightRain.png';
 import HeavyRain from '../images/HeavyRain.png';
 import Thunderstorm from '../images/Thunderstorm.png';
+import ThunderHail from '../images/Thunder-hail.png'
 import Snow from '../images/Snow.png';
-import Hail from '../images/Hail.png';
 import Sleet from '../images/Sleet.png';
 import Fog from '../images/Fog.png';
 
@@ -26,10 +26,10 @@ export const getWeatherImg = (weatherCode) => {
       return Shower;
     case 53:
     case 55:
-      return LightRain;
+      return Sleet;
     case 56:
     case 57:
-      return Sleet;
+      return Hail;
     case 61:
       return LightRain;
     case 63:
@@ -37,7 +37,7 @@ export const getWeatherImg = (weatherCode) => {
       return HeavyRain;
     case 66:
     case 67:
-      return Hail;
+      return Sleet;
     case 71:
     case 73:
     case 75:
@@ -56,6 +56,6 @@ export const getWeatherImg = (weatherCode) => {
       return Thunderstorm;
     case 96:
     case 99:
-      return Hail;
+      return ThunderHail;
   }
 }
