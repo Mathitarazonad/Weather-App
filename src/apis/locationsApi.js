@@ -4,10 +4,13 @@ export const locationsAPI = createApi({
   reducerPath : 'locationsAPI',
   baseQuery : fetchBaseQuery({baseUrl: 'http://localhost:8000'}),
   endpoints : builder => ({
-    getCurrentLocation : builder.query({
-      query : ({city, country}) => `/coords?city=${city}&country=${country}`
+    getLocationByCity : builder.query({
+      query : ({city, country}) => `/city?city=${city}&country=${country}`
+    }),
+    getLocationByCoords : builder.query({
+      query : ({latitude, longitude}) => `/coords?latitude=${latitude}&longitude=${longitude}`
     })
   })
 });
 
-export const { useGetCurrentLocationQuery } = locationsAPI;
+export const { useGetCurrentLocationQuery, useGetLocationByCoordsQuery } = locationsAPI;
