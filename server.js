@@ -33,7 +33,12 @@ app.get('/today', (req, res) => {
 
 app.get('/coords', (req, res) => {
   const [latitude, longitude] = [req.query.latitude, req.query.longitude];
-  axios.get(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data))
+  axios.get(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data));
+})
+
+app.get('/hourly', (req, res) => {
+  const [latitude, longitude] = [req.query.latitude, req.query.longitude];
+  axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode`).then(resp => res.json(resp.data));
 })
 
 app.listen(8000, () => {
