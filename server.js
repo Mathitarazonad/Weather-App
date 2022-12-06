@@ -37,8 +37,8 @@ app.get('/coords', (req, res) => {
 })
 
 app.get('/hourly', (req, res) => {
-  const [latitude, longitude, timezone] = [req.query.latitude, req.query.longitude, req.query.timezone];
-  axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode&timezone=${timezone}`).then(resp => res.json(resp.data));
+  const [latitude, longitude, timezone, temperature] = [req.query.latitude, req.query.longitude, req.query.timezone, req.query.temperature];
+  axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode&timezone=${timezone}&current_weather=true&temperature_unit=${temperature}`).then(resp => res.json(resp.data));
 })
 
 app.listen(8000, () => {

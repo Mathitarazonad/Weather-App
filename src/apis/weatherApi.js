@@ -8,7 +8,7 @@ export const weatherAPI = createApi({
       query : ({latitude, longitude, isCelsius, timezone}) => `/today?latitude=${latitude}&longitude=${longitude}&temperature=${isCelsius ? 'celsius' : 'fahrenheit'}&timezone=${timezone}`
     }),
     getHourlyWeather : builder.query({
-      query : ({latitude, longitude, timezone}) => `/hourly?latitude=${latitude}&longitude=${longitude}&timezone=${timezone}`
+      query : ({latitude, longitude, timezone, isCelsius}) => `/hourly?latitude=${latitude}&longitude=${longitude}&timezone=${timezone}&temperature=${isCelsius ? 'celsius' : 'fahrenheit'}`
     }),
   })
 })
