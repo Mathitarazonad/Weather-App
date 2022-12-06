@@ -7,7 +7,7 @@ import { IoIosPin } from 'react-icons/io';
 //Bg
 import CloudBackground from '../images/Cloud-background.png';
 //Function
-import { getWeatherImg } from './functions';
+import { getWeatherCodeName, getWeatherImg } from './functions';
 //Hooks of RTK Query
 import { useGetTodayWeatherQuery } from '../apis/weatherApi';
 import { useGetLocationByCoordsQuery } from '../apis/locationsApi';
@@ -108,7 +108,7 @@ export default function TodayWeather() {
             <p>{maxTemp >= 1 ? Math.round(maxTemp) : maxTemp}°{isCelsius ? 'C' : 'F'}</p>
           </div>
         </div>
-        <h2>Clear</h2>
+        <h2>{getWeatherCodeName(weatherCode)}</h2>
         <div className='-current-details'>
           <div className='-dates'>
             <p>Today</p>
