@@ -11,7 +11,8 @@ const initialState = {
       currentWeatherCode : 3
     }
   },
-  hourlyWeather : []
+  hourlyWeather : [],
+  hourlyPageSelected : 0,
 }
 
 const weatherSlice = createSlice({
@@ -26,9 +27,12 @@ const weatherSlice = createSlice({
     },
     setHourlyWeather : (state, action) => {
       state.hourlyWeather = action.payload;
+    },
+    setCurrentHourlyPageSelected : (state, action) => {
+      state.hourlyPageSelected = action.payload;
     }
   }
 })
 
 export default weatherSlice.reducer;
-export const { setCurrentWeather, setHourlyWeather } = weatherSlice.actions;
+export const { setCurrentWeather, setHourlyWeather, setCurrentHourlyPageSelected } = weatherSlice.actions;
