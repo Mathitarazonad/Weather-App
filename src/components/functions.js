@@ -110,3 +110,21 @@ export const getWeatherCodeName = (weatherCode) => {
   }
 }
 
+export const getArrayOfHours = (data) => {
+  const arrayOfHours = [];
+  const currentHourIndex = data.hourly.time.indexOf(data.current_weather.time);
+  const hours = data.hourly.time.slice(currentHourIndex+1, currentHourIndex+16);
+  const temperatures = data.hourly.temperature_2m.slice(currentHourIndex+1, currentHourIndex+16);
+  const weatherCodes = data.hourly.weathercode.slice(currentHourIndex+1, currentHourIndex+16);
+
+  for (let i = 0; i < hours.length; i++) {
+    const newHour = {};
+    newHour.hour = hours[i].slice(11,17);
+    newHour.temperature = temperatures[i] >= 1 ? Math.round(temperatures[i]) : temperatures[i];
+    newHour.weatherCode = weatherCodes[i]
+    arrayOfHours.push(newHour);
+  }
+  
+  return [arrayOfHours];
+}
+
