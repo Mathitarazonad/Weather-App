@@ -25,7 +25,7 @@ const weatherSlice = createSlice({
       state.todayWeather.weatherCode = weatherCode;
     },
     setHourlyWeather : (state, action) => {
-      state.hourlyWeather = action.payload.flat();
+      state.hourlyWeather = action.payload;
     }
   }
 })
