@@ -6,8 +6,11 @@ export const weatherAPI = createApi({
   endpoints : (builder) => ({
     getTodayWeather : builder.query({
       query : ({latitude, longitude, isCelsius, timezone}) => `/today?latitude=${latitude}&longitude=${longitude}&temperature=${isCelsius ? 'celsius' : 'fahrenheit'}&timezone=${timezone}`
-    })
+    }),
+    getHourlyWeather : builder.query({
+      query : ({latitude, longitude}) => `/hourly?latitude${latitude}&longitude=${longitude}`
+    }),
   })
 })
 
-export const { useGetTodayWeatherQuery } = weatherAPI;
+export const { useGetTodayWeatherQuery, useGetHourlyWeatherQuery } = weatherAPI;
