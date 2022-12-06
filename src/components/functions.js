@@ -9,6 +9,7 @@ import ThunderHail from '../images/Thunder-hail.png'
 import Snow from '../images/Snow.png';
 import Sleet from '../images/Sleet.png';
 import Fog from '../images/Fog.png';
+import { chunk } from 'lodash';
 
 export const getWeatherImg = (weatherCode) => {
   switch (weatherCode) {
@@ -125,6 +126,6 @@ export const getArrayOfHours = (data) => {
     arrayOfHours.push(newHour);
   }
   
-  return [arrayOfHours];
+  return chunk(arrayOfHours, 5);
 }
 
