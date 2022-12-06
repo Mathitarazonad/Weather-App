@@ -15,8 +15,8 @@ export const getWeatherImg = (weatherCode) => {
     case 0:
       return Clear;
     case 1:
-      return MainlyClear;
     case 2:
+      return MainlyClear;
     case 3:
       return Cloudy;
     case 45:
@@ -59,3 +59,54 @@ export const getWeatherImg = (weatherCode) => {
       return ThunderHail;
   }
 }
+
+export const getWeatherCodeName = (weatherCode) => {
+  switch (weatherCode) {
+    case 0:
+      return 'Clear';
+    case 1:
+    case 2:
+      return 'Mainly Clear';
+    case 3:
+      return 'Cloudy';
+    case 45:
+    case 48:
+      return 'Foggy';
+    case 51:
+      return 'Shower';
+    case 53:
+    case 55:
+      return 'Sleet';
+    case 56:
+    case 57:
+      return 'Hail';
+    case 61:
+      return 'Light Rain';
+    case 63:
+    case 65:
+      return 'Heavy Rain';
+    case 66:
+    case 67:
+      return 'Sleet';
+    case 71:
+    case 73:
+    case 75:
+    case 77:
+      return 'Snow';
+    case 80:
+      return 'Shower';
+    case 81:
+      return 'Light Rain';
+    case 82: 
+      return 'Heavy Rain';
+    case 85:
+    case 86:
+      return 'Snow';
+    case 95:
+      return 'Thunderstorm';
+    case 96:
+    case 99:
+      return 'Thunderstorm with Hail';
+  }
+}
+
