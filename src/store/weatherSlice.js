@@ -10,7 +10,8 @@ const initialState = {
     weatherCode : {
       currentWeatherCode : 3
     }
-  }
+  },
+  hourlyWeather : []
 }
 
 const weatherSlice = createSlice({
@@ -22,9 +23,12 @@ const weatherSlice = createSlice({
       state.todayWeather.temperatures = {min, max};
       state.todayWeather.temperatures.currentTemperature = currentTemp;
       state.todayWeather.weatherCode = weatherCode;
+    },
+    setHourlyWeather : (state, action) => {
+      state.hourlyWeather = action.payload.flat();
     }
   }
 })
 
 export default weatherSlice.reducer;
-export const { setCurrentWeather } = weatherSlice.actions;
+export const { setCurrentWeather, setHourlyWeather } = weatherSlice.actions;
