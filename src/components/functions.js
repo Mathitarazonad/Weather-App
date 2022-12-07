@@ -59,7 +59,7 @@ export const getWeatherImg = (weatherCode) => {
     case 99:
       return ThunderHail;
   }
-}
+};
 
 export const getWeatherCodeName = (weatherCode) => {
   switch (weatherCode) {
@@ -109,7 +109,7 @@ export const getWeatherCodeName = (weatherCode) => {
     case 99:
       return 'Thunderstorm with Hail';
   }
-}
+};
 
 export const getArrayOfHours = (data) => {
   const arrayOfHours = [];
@@ -127,5 +127,11 @@ export const getArrayOfHours = (data) => {
   }
   
   return chunk(arrayOfHours, 5);
+};
+
+export const getDates = (date) => {
+  const time = new Date(date).toString();
+  const [hour, day, dayName, month] = [time.slice(16,21), time.slice(0,3), time.slice(8,10),time.slice(4,7)];
+  return [hour, day, dayName, month];
 }
 
