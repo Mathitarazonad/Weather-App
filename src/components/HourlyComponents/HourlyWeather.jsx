@@ -5,6 +5,7 @@ import { getArrayOfHours } from '../functions';
 import { setHourlyWeather } from '../../store/weatherSlice';
 import SingleHourWeather from './SingleHourWeather';
 import {v4 as uuidv4} from 'uuid';
+import HourlyButtons from './HourlyButtons';
 
 export default function HourlyWeather() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ export default function HourlyWeather() {
 
   const { hourlyWeather } = useSelector((store) => store.weather);
   const { isCelsius } = useSelector((store) => store.temperature);
+  const { hourlyPageSelected } = useSelector((store) => store.weather);
 
   const {
     data: hourlyInfo,
@@ -27,12 +29,13 @@ export default function HourlyWeather() {
   }, [hourlyInfo]);
 
   if (isLoading) {
-    return <div className="hourly-weather-loading">Loading Weather...</div>;
+    return <div className='hourly-weather-loading'>Loading Weather...</div>;
   } else if (isSuccess) {
     return (
-      <div className="hourly-weather-container">
-        {hourlyWeather.map((hourArr) => (
-          <div className="hourly-array" key={uuidv4()}>
+      <div className='hourly-weather-container'>
+        <HourlyButtons />
+        {hourlyWeather.map((hourArr, index) => (
+          <div className={index === hourlyPageSelected ? 'hourly-array _selected' : 'hourly-array'} key={uuidv4()}>
             {hourArr.map((hour) => (
               <SingleHourWeather
                 hour={hour.hour}
