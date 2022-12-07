@@ -13,7 +13,7 @@ const initialState = {
   },
   hourlyWeather : [],
   hourlyPageSelected : 0,
-  weeklyWeather : []
+  dailyWeather : []
 }
 
 const weatherSlice = createSlice({
@@ -33,7 +33,7 @@ const weatherSlice = createSlice({
       state.hourlyPageSelected = action.payload;
     },
     setDailyWeather : (state, action) => {
-      state.weeklyWeather = action.payload;
+      state.dailyWeather = action.payload;
     }
   }
 })
