@@ -1,18 +1,21 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
+import { getTemperatureFormat, getWeatherImg, roundTemperature } from '../functions';
 
-export default function DailyWeather() {
+export default function DailyWeather({dayName, day, month, weatherCode, minTemp, maxTemp}) {
+  const { isCelsius } = useSelector(store => store.temperature)
+
   return (
     <div className='day-weather'>
       <div className='dates'>
-        <p>Sun, </p>
-        <p>7 Jun</p>
+        <p>{dayName}, </p>
+        <p>{day} {month}</p>
       </div>
       <div className='day-image'>
-        <img src='../images/Clear.png' />
+        <img src={getWeatherImg(weatherCode)} />
       </div>
       <div className='day-temperatures'>
-        <p>16°C</p>
-        <p>11°C</p>
+        <p>{roundTemperature(minTemp)}°{getTemperatureFormat(isCelsius)}</p>
+        <p>{roundTemperature(maxTemp)}°{getTemperatureFormat(isCelsius)}</p>
       </div>
     </div>
   )
