@@ -135,3 +135,11 @@ export const getDates = (date) => {
   return [hour, day, dayName, month];
 }
 
+export const getTemperatureFormat = (isCelsius) => {
+  if (isCelsius) {
+    return 'C'
+  } else {
+    return 'F'
+  }
+}
+
