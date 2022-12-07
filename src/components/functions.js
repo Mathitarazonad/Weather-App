@@ -143,6 +143,14 @@ export const getTemperatureFormat = (isCelsius) => {
   }
 }
 
+export const roundTemperature = (temperature) => {
+  if(temperature >= 1) {
+    return Math.round(temperature);
+  } else {
+    return temperature
+  }
+}
+
 export const getArrayOfDays = (data) => {
   const arrOfDays = [];
   const days = data.daily.time.slice(0, 5);
