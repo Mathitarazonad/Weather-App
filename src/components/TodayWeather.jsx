@@ -6,8 +6,8 @@ import { BsFillRecordFill } from 'react-icons/bs';
 import { IoIosPin } from 'react-icons/io';
 //Bg
 import CloudBackground from '../images/Cloud-background.png';
-//Function
-import { getWeatherCodeName, getWeatherImg } from './functions';
+//Functions
+import { getDates, getWeatherCodeName, getWeatherImg } from './functions';
 //Hooks of RTK Query
 import { useGetTodayWeatherQuery } from '../apis/weatherApi';
 import { useGetLocationByCoordsQuery } from '../apis/locationsApi';
@@ -44,8 +44,7 @@ export default function TodayWeather() {
         max: weatherInfo.daily.temperature_2m_max[0],
         weatherCode : weatherInfo.current_weather.weathercode
       }));
-      const time = new Date(weatherInfo.current_weather.time).toString();
-      const [hour, day, dayName, month] = [time.slice(16,21), time.slice(0,3), time.slice(8,10),time.slice(4,7)];
+      const [hour, day, dayName, month] = getDates(weatherInfo.current_weather.time)
       dispatch(setCurrentTime({hour, day, dayName, month}));
     } 
   }, [successWeather, weatherInfo]);
