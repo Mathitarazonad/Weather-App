@@ -175,3 +175,10 @@ export const getArrayOfDays = (data) => {
   return arrOfDays;
 }
 
+export const getCompassDirection = (deg) => {
+  const val = Math.round(deg / 22.5);
+  const compassDirections=["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+  return (compassDirections[(val % 16)])
+}
+
+
