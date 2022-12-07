@@ -43,7 +43,7 @@ app.get('/hourly', (req, res) => {
 
 app.get('/todaysDetails', (req, res) => {
   const [latitude, longitude, timezone, temperature] = [req.query.latitude, req.query.longitude, req.query.timezone, req.query.temperature];
-  axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=relativehumidity_2m,apparent_temperature,visibility,windspeed_10m,winddirection_10m&timezone=${timezone}&temperature_unit=${temperature}&current_weather=true`).then(resp => res.json(resp.data));
+  axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=relativehumidity_2m,apparent_temperature,visibility,windspeed_10m,winddirection_10m&timezone=${timezone}&temperature_unit=${temperature}&current_weather=true&windspeed_unit=mph`).then(resp => res.json(resp.data));
 })
 
 app.listen(8000, () => {
