@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getArrayOfDays } from '../functions';
 import { setDailyWeather } from '../../store/weatherSlice';
+import {v4 as uuid} from 'uuid';
 
 export default function WeeklyWeather() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function WeeklyWeather() {
           minTemp={singleDay.minTemp}
           maxTemp={singleDay.maxTemp}
           weatherCode={singleDay.weatherCode}
+          key={uuid()}
         />
       ))}
     </div>
