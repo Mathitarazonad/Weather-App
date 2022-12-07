@@ -7,7 +7,7 @@ import { IoIosPin } from 'react-icons/io';
 //Bg
 import CloudBackground from '../images/Cloud-background.png';
 //Functions
-import { getDates, getWeatherCodeName, getWeatherImg } from './functions';
+import { getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg } from './functions';
 //Hooks of RTK Query
 import { useGetTodayWeatherQuery } from '../apis/weatherApi';
 import { useGetLocationByCoordsQuery } from '../apis/locationsApi';
@@ -99,12 +99,12 @@ export default function TodayWeather() {
       <div className='__information'>
         <div className='-today-temperatures'>
           <div className='current-temperature'>
-            <p>{currentTemperature >= 1 ? Math.round(currentTemperature) : currentTemperature}</p> <p>°{isCelsius ? 'C' : 'F'}</p>
+            <p>{currentTemperature >= 1 ? Math.round(currentTemperature) : currentTemperature}</p> <p>°{getTemperatureFormat(isCelsius)}</p>
           </div>
           <div className='min-max-temperature'>
-            <p>{minTemp >= 1 ? Math.round(minTemp) : minTemp}°{isCelsius ? 'C' : 'F'}</p>
+            <p>{minTemp >= 1 ? Math.round(minTemp) : minTemp}°{getTemperatureFormat(isCelsius)}</p>
             <p>/</p>
-            <p>{maxTemp >= 1 ? Math.round(maxTemp) : maxTemp}°{isCelsius ? 'C' : 'F'}</p>
+            <p>{maxTemp >= 1 ? Math.round(maxTemp) : maxTemp}°{getTemperatureFormat(isCelsius)}</p>
           </div>
         </div>
         <h2>{getWeatherCodeName(weatherCode)}</h2>
