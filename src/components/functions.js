@@ -143,3 +143,27 @@ export const getTemperatureFormat = (isCelsius) => {
   }
 }
 
+export const getArrayOfDays = (data) => {
+  const arrOfDays = [];
+  const days = data.daily.time.slice(0, 5);
+  const weatherCodes = data.daily.weathercode;
+  const minTemps = data.daily.temperature_2m_min;
+  const maxTemps = data.daily.temperature_2m_max;
+
+  for (let i = 0; i < days.length; i++) {
+    let newDay = {};
+    const [, day, dayName, month] = getDates(days[i]);
+    newDay = {
+      day,
+      dayName,
+      month,
+      minTemp: minTemps[i],
+      maxTemp: maxTemps[i],
+      weatherCode: weatherCodes[i]
+    };
+    arrOfDays.push(newDay);
+  }
+
+  return arrOfDays;
+}
+
