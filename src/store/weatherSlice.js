@@ -13,7 +13,8 @@ const initialState = {
   },
   hourlyWeather : [],
   hourlyPageSelected : 0,
-  dailyWeather : []
+  dailyWeather : [],
+  dailyWeatherMode : true,
 }
 
 const weatherSlice = createSlice({
@@ -34,9 +35,12 @@ const weatherSlice = createSlice({
     },
     setDailyWeather : (state, action) => {
       state.dailyWeather = action.payload;
+    },
+    setDailyWeatherMode : (state, action) => {
+      state.dailyWeatherMode = action.payload
     }
   }
 })
 
 export default weatherSlice.reducer;
-export const { setCurrentWeather, setHourlyWeather, setCurrentHourlyPageSelected, setDailyWeather } = weatherSlice.actions;
+export const { setCurrentWeather, setHourlyWeather, setCurrentHourlyPageSelected, setDailyWeather, setDailyWeatherMode } = weatherSlice.actions;
