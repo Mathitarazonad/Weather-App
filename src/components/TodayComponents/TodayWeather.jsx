@@ -5,16 +5,16 @@ import { BiCurrentLocation } from 'react-icons/bi';
 import { BsFillRecordFill } from 'react-icons/bs';
 import { IoIosPin } from 'react-icons/io';
 //Bg
-import CloudBackground from '../images/Cloud-background.png';
+import CloudBackground from '../../images/Cloud-background.png';
 //Functions
-import { getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from './functions';
+import { getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from '../functions';
 //Hooks of RTK Query
-import { useGetTodayWeatherQuery } from '../apis/weatherApi';
-import { useGetLocationByCoordsQuery } from '../apis/locationsApi';
+import { useGetTodayWeatherQuery } from '../../apis/weatherApi';
+import { useGetLocationByCoordsQuery } from '../../apis/locationsApi';
 //Reducers from slices
-import { setIfMenuOpen } from '../store/menuSlice';
-import { setCurrentWeather } from '../store/weatherSlice';
-import { setCurrentCoords, setCurrentLocationInfo, setCurrentTime } from '../store/locationSlice';
+import { setIfMenuOpen } from '../../store/menuSlice';
+import { setCurrentWeather } from '../../store/weatherSlice';
+import { setCurrentCoords, setCurrentLocationInfo, setCurrentTime } from '../../store/locationSlice';
 
 export default function TodayWeather() {
   const dispatch = useDispatch();

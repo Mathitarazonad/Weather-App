@@ -1,9 +1,9 @@
 import { FaLocationArrow } from 'react-icons/fa';
-import { useGetTodaysDetailsQuery } from '../apis/weatherApi';
+import { useGetTodaysDetailsQuery } from '../../apis/weatherApi';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { setTodayDetails } from '../store/weatherSlice';
-import { getCompassDirection, getTemperatureFormat, roundTemperature } from './functions';
+import { setTodayDetails } from '../../store/weatherSlice';
+import { getCompassDirection, getTemperatureFormat, roundTemperature } from '../functions';
 
 export default function () {
   const dispatch = useDispatch();
