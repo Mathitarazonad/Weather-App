@@ -7,22 +7,23 @@ import { IoIosPin } from 'react-icons/io';
 //Bg
 import CloudBackground from '../../images/Cloud-background.png';
 //Functions
-import { getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from '../functions';
+import { citiesAreNotEqual, getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from '../functions';
 //Hooks of RTK Query
 import { useGetTodayWeatherQuery } from '../../apis/weatherApi';
 import { useGetLocationByCoordsQuery } from '../../apis/locationsApi';
 //Reducers from slices
 import { setIfMenuOpen } from '../../store/menuSlice';
 import { setCurrentWeather } from '../../store/weatherSlice';
-import { setCurrentCoords, setCurrentLocationInfo, setCurrentTime } from '../../store/locationSlice';
+import { setCitiesOptions, setCurrentCoords, setCurrentLocationInfo, setCurrentTime, setSearchedCitiesOptions } from '../../store/locationSlice';
 
 export default function TodayWeather() {
   const dispatch = useDispatch();
 
   //Location info
-  const {timezone, city} = useSelector(store => store.locations.current);
+  const {timezone, city: cityName} = useSelector(store => store.locations.current);
   const {hour, day, dayName, month} = useSelector(store => store.locations.current.time);
   const {latitude, longitude} = useSelector(store => store.locations.current.coords);
+  const {searchedCitiesOptions} = useSelector(store => store.locations);
 
   //Weather variables and temperature selected
   const {isCelsius} = useSelector(store => store.temperature);
@@ -51,7 +52,8 @@ export default function TodayWeather() {
 
   useEffect(() => {
     if(successLocation) {
-      const {city, country_code, timezone, lat, lon} = currentLocationInfo.features[0].properties;
+      const {city, country_code, timezone, lat, lon, state: stateName} = currentLocationInfo.features[0].properties;
+
       dispatch(setCurrentLocationInfo({
         city,
         country : country_code,
@@ -59,6 +61,17 @@ export default function TodayWeather() {
         longitude : lon,
         timezone : timezone.name,
       }));
+
+      if(citiesAreNotEqual(searchedCitiesOptions, city, stateName)) {
+        dispatch(setSearchedCitiesOptions({
+          city,
+          country : country_code,
+          timezone: timezone.name,
+          latitude : lat,
+          longitude : lon,
+          stateName,
+        }))
+      }  
     }
   }, [currentLocationInfo]);
 
@@ -78,7 +91,7 @@ export default function TodayWeather() {
       dispatch(setCurrentCoords({
         latitude : pos.coords.latitude,
         longitude : pos.coords.longitude
-      }))
+      }));
     }
   };
 
@@ -118,7 +131,7 @@ export default function TodayWeather() {
           </div>
           <div className='-location'>
             <IoIosPin />
-            <p>{city}</p>
+            <p>{cityName}</p>
           </div>
         </div>
       </div></> : 
