@@ -181,4 +181,12 @@ export const getCompassDirection = (deg) => {
   return (compassDirections[(val % 16)])
 }
 
+export const citiesAreNotEqual = (cities, city, stateName) => {
+  for (let i = 0; i < cities.length; i++) {
+    if (cities[i].city === city && cities[i].stateName === stateName) {
+      return false;
+    }
+  }
+  return true;
+}
 
