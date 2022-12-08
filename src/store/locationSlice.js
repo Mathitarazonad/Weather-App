@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   searchedCity : '',
+  isSearchingCities : false,
   current : {
     city : 'New York',
     country : 'us',
@@ -18,20 +19,15 @@ const initialState = {
     }
   },
   citiesOptions : [
+  ],
+  searchedCitiesOptions : [
     {
       city : 'New York',
+      stateName: 'New York',
       country : 'us',
-      coords: {
-        latitude : 40.7127281,
-        longitude : -74.0060152
-      },
+      latitude : 40.7127281,
+      longitude : -74.0060152,
       timezone: 'America/New_York',
-      time: {
-        hour: '',
-        day: '',
-        dayName: '',
-        month: '',
-      }
     },
   ]
 }
@@ -42,6 +38,9 @@ const locationSlice = createSlice({
   reducers : {
     setSearchedCity : (state, action) => {
       state.searchedCity = action.payload;
+    },
+    setIfSearchingCities : (state, action) => {
+      state.isSearchingCities = action.payload;
     },
     setCurrentLocationInfo : (state, action) => {
       const {city, country, latitude, longitude, timezone} = action.payload;
@@ -64,12 +63,18 @@ const locationSlice = createSlice({
       state.current.time.hour = hour;
     },
     setCitiesOptions : (state, action) => {
-      const {city, country, latitude, longitude, timezone} = action.payload;
-      const newCity = {city, country, latitude, longitude, timezone};
-      state.citiesOptions = [...state.citiesOptions, newCity];
+      const {city, country, latitude, longitude, timezone, stateName} = action.payload;
+      const newCity = {city, country, latitude, longitude, timezone, stateName};
+      state.citiesOptions.unshift(newCity)
+      
+    },
+    setSearchedCitiesOptions : (state, action) => {
+      const {city, country, latitude, longitude, timezone, stateName} = action.payload;
+      const newCity = {city, country, latitude, longitude, timezone, stateName};
+      state.searchedCitiesOptions.unshift(newCity);
     }
   }
 });
 
 export default locationSlice.reducer;
-export const {setSearchedCity, setCurrentLocationInfo, setCurrentCoords, setCurrentTime, setCitiesOptions} = locationSlice.actions;
+export const {setSearchedCity, setIfSearchingCities, setCurrentLocationInfo, setCurrentCoords, setCurrentTime, setCitiesOptions, setSearchedCitiesOptions} = locationSlice.actions;
