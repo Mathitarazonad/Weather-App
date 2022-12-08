@@ -23,10 +23,7 @@ export default function LocationsMenu() {
         <button className='search-btn'>Search</button>
       </form>
       <div className='locations'>
-        <div className='single-location'>
-          <p>London</p>
-          <AiOutlineRight />
-        </div>
+        
       </div>
     </div>
   )
