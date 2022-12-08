@@ -16,7 +16,24 @@ const initialState = {
       dayName: '',
       month: '',
     }
- }
+  },
+  citiesOptions : [
+    {
+      city : 'New York',
+      country : 'us',
+      coords: {
+        latitude : 40.7127281,
+        longitude : -74.0060152
+      },
+      timezone: 'America/New_York',
+      time: {
+        hour: '',
+        day: '',
+        dayName: '',
+        month: '',
+      }
+    },
+  ]
 }
 
 const locationSlice = createSlice({
@@ -45,9 +62,14 @@ const locationSlice = createSlice({
       state.current.time.dayName = dayName;
       state.current.time.month = month;
       state.current.time.hour = hour;
+    },
+    setCitiesOptions : (state, action) => {
+      const {city, country, latitude, longitude, timezone} = action.payload;
+      const newCity = {city, country, latitude, longitude, timezone};
+      state.citiesOptions = [...state.citiesOptions, newCity];
     }
   }
 });
 
 export default locationSlice.reducer;
-export const {setSearchedCity, setCurrentLocationInfo, setCurrentCoords, setCurrentTime} = locationSlice.actions;
+export const {setSearchedCity, setCurrentLocationInfo, setCurrentCoords, setCurrentTime, setCitiesOptions} = locationSlice.actions;
