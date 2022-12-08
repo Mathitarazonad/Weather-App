@@ -14,7 +14,7 @@ import { useGetLocationByCoordsQuery } from '../../apis/locationsApi';
 //Reducers from slices
 import { setIfMenuOpen } from '../../store/menuSlice';
 import { setCurrentWeather } from '../../store/weatherSlice';
-import { setCitiesOptions, setCurrentCoords, setCurrentLocationInfo, setCurrentTime, setSearchedCitiesOptions } from '../../store/locationSlice';
+import { setCurrentCoords, setCurrentLocationInfo, setCurrentTime, setSearchedCitiesOptions } from '../../store/locationSlice';
 
 export default function TodayWeather() {
   const dispatch = useDispatch();
