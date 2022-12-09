@@ -63,10 +63,7 @@ const locationSlice = createSlice({
       state.current.time.hour = hour;
     },
     setCitiesOptions : (state, action) => {
-      const {city, country, latitude, longitude, timezone, stateName} = action.payload;
-      const newCity = {city, country, latitude, longitude, timezone, stateName};
-      state.citiesOptions.unshift(newCity)
-      
+      state.citiesOptions = action.payload;
     },
     setSearchedCitiesOptions : (state, action) => {
       const {city, country, latitude, longitude, timezone, stateName} = action.payload;
