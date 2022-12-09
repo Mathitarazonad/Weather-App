@@ -5,6 +5,7 @@ const initialState = {
   isSearchingCities : false,
   current : {
     city : 'New York',
+    stateName : 'New York',
     country : 'us',
     coords: {
       latitude : 40.7127281,
@@ -43,12 +44,13 @@ const locationSlice = createSlice({
       state.isSearchingCities = action.payload;
     },
     setCurrentLocationInfo : (state, action) => {
-      const {city, country, latitude, longitude, timezone} = action.payload;
+      const {city, stateName, country, latitude, longitude, timezone} = action.payload;
       state.current.city = city;
       state.current.country = country;
       state.current.timezone = timezone;
       state.current.coords.latitude = latitude;
       state.current.coords.longitude = longitude;
+      state.current.stateName = stateName
     },
     setCurrentCoords: (state,action) => {
       const {latitude, longitude} = action.payload
