@@ -60,6 +60,7 @@ export default function TodayWeather() {
         latitude : lat,
         longitude : lon,
         timezone : timezone.name,
+        stateName,
       }));
 
       if(citiesAreNotEqual(searchedCitiesOptions, city, stateName)) {
