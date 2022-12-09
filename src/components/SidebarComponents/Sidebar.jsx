@@ -7,8 +7,8 @@ export default function Sidebar() {
   const isMenuOpen = useSelector((store) => store.menu.menuIsOpen);
 
   return (
-    <div className="sidebar">
+    <section className="sidebar">
       {isMenuOpen ? <LocationsMenu /> : <TodayWeather />}
-    </div>
+    </section>
   );
 }
