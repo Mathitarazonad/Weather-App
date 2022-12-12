@@ -6,7 +6,7 @@ import { getArrayOfDays } from '../functions';
 import { setDailyWeather } from '../../store/weatherSlice';
 import {v4 as uuid} from 'uuid';
 
-export default function WeeklyWeather() {
+export default function WeekWeather() {
   const dispatch = useDispatch();
   const { latitude, longitude } = useSelector((store) => store.locations.current.coords);
   const { timezone } = useSelector((store) => store.locations.current);
