@@ -131,7 +131,7 @@ export const getArrayOfHours = (data) => {
 
 export const getDates = (date) => {
   const time = new Date(date).toString();
-  const [hour, day, dayName, month] = [time.slice(16,21), time.slice(0,3), time.slice(8,10),time.slice(4,7)];
+  const [hour, day, dayName, month] = [time.slice(16,21), time.slice(8,10), time.slice(0, 3),time.slice(4,7)];
   return [hour, day, dayName, month];
 }
 
@@ -160,10 +160,10 @@ export const getArrayOfDays = (data) => {
 
   for (let i = 0; i < days.length; i++) {
     let newDay = {};
-    const [, day, dayName, month] = getDates(days[i]);
+    const [, day, dayName, month] = getDates(`${days[i]}T00:00`);
     newDay = {
       day,
-      dayName,
+      dayName : i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : dayName,
       month,
       minTemp: minTemps[i],
       maxTemp: maxTemps[i],
@@ -171,7 +171,6 @@ export const getArrayOfDays = (data) => {
     };
     arrOfDays.push(newDay);
   }
-
   return arrOfDays;
 }
 
