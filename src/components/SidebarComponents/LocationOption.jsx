@@ -24,7 +24,7 @@ export default function LocationOption({city}) {
       <div className='location-info'>
         <div className='location-info-text' onClick={() => handleClick()}>
           <p>{city.city}</p>
-          <p>State - {city.stateName}</p>
+          <p>{city.stateName ? `State - ${city.stateName}` : ''}</p>
         </div>
         <img src={`https://flagcdn.com/48x36/${city.country}.png`} className='location-flag'/>
       </div>
