@@ -1,4 +1,4 @@
-import { AiFillCaretRight, AiOutlineCloseCircle } from 'react-icons/ai';
+import { AiOutlineRight, AiOutlineClose } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentLocationInfo } from '../../store/locationSlice';
 
@@ -21,16 +21,15 @@ export default function LocationOption({city}) {
 
   return (
     <div className='location-option'>
-      <div className='location-info'>
-        <div className='location-info-text' onClick={() => handleClick()}>
+      <div className='-info'>
+        <div className='-name' onClick={() => handleClick()}>
           <p>{city.city}</p>
-          <p>{city.stateName ? `State - ${city.stateName}` : ''}</p>
         </div>
-        <img src={`https://flagcdn.com/48x36/${city.country}.png`} className='location-flag'/>
+        <img src={`https://flagcdn.com/48x36/${city.country}.png`} className='location-flag' alt={`${city.country}Flag`}/>
       </div>
-      <div className='location-btns-container'>
-        <button className='location-btn' id='location-select-btn'><AiFillCaretRight /></button>
-        <button className='location-btn' id='location-delete-btn'><AiOutlineCloseCircle /></button>
+      <div className='-btns-container'>
+        <button className='location-btn' id='location-select-btn'><AiOutlineRight /></button>
+        <button className='location-btn' id='location-delete-btn'><AiOutlineClose /></button>
       </div>
     </div>
   )
