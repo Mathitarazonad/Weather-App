@@ -1,6 +1,6 @@
 import { AiOutlineRight, AiOutlineClose } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentLocationInfo } from '../../store/locationSlice';
+import { setCurrentLocationInfo, deleteSearchedCityOption } from '../../store/locationSlice';
 
 export default function LocationOption({city}) {
   const dispatch = useDispatch();
@@ -19,6 +19,10 @@ export default function LocationOption({city}) {
     }
   };
 
+  const handleDelete = city => {
+    dispatch(deleteSearchedCityOption(city))
+  }
+
   return (
     <div className='location-option'>
       <div className='-info'>
@@ -29,7 +33,7 @@ export default function LocationOption({city}) {
       </div>
       <div className='-btns-container'>
         <button className='location-btn' id='location-select-btn'><AiOutlineRight /></button>
-        <button className='location-btn' id='location-delete-btn'><AiOutlineClose /></button>
+        <button className='location-btn' id='location-delete-btn' onClick={() => handleDelete(city.city)}><AiOutlineClose /></button>
       </div>
     </div>
   )
