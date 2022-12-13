@@ -27,7 +27,7 @@ export default function TodayWeather() {
 
   //Weather variables and temperature selected
   const {isCelsius} = useSelector(store => store.temperature);
-  const {currentTemperature, min :minTemp, max :maxTemp} = useSelector(store => store.weather.todayWeather.temperatures);
+  const {currentTemperature} = useSelector(store => store.weather.todayWeather.temperatures);
   const {weatherCode} = useSelector(store => store.weather.todayWeather);
 
   //RTK Query endpoints calls
@@ -111,15 +111,8 @@ export default function TodayWeather() {
         <img src={getWeatherImg(weatherCode)} alt='-currentWeather' className='current-weather'/>
       </div>
       <div className='__information'>
-        <div className='-today-temperatures'>
-          <div className='current-temperature'>
+        <div className='current-temperature'>
             <p>{roundTemperature(currentTemperature)}</p> <p>°{getTemperatureFormat(isCelsius)}</p>
-          </div>
-          <div className='min-max-temperature'>
-            <p>{roundTemperature(minTemp)}°{getTemperatureFormat(isCelsius)}</p>
-            <p>/</p>
-            <p>{roundTemperature(maxTemp)}°{getTemperatureFormat(isCelsius)}</p>
-          </div>
         </div>
         <h2>{getWeatherCodeName(weatherCode)}</h2>
         <div className='-current-details'>
