@@ -71,9 +71,14 @@ const locationSlice = createSlice({
       const {city, country, latitude, longitude, timezone, stateName} = action.payload;
       const newCity = {city, country, latitude, longitude, timezone, stateName};
       state.searchedCitiesOptions.unshift(newCity);
+    },
+    deleteSearchedCityOption : (state, action) => {
+      if (state.searchedCitiesOptions.length > 0 && state.current.city !== action.payload) {
+        state.searchedCitiesOptions = state.searchedCitiesOptions.filter(city => city.city !== action.payload)
+      }
     }
   }
 });
 
 export default locationSlice.reducer;
-export const {setSearchedCity, setIfSearchingCities, setCurrentLocationInfo, setCurrentCoords, setCurrentTime, setCitiesOptions, setSearchedCitiesOptions} = locationSlice.actions;
+export const {setSearchedCity, setIfSearchingCities, setCurrentLocationInfo, setCurrentCoords, setCurrentTime, setCitiesOptions, setSearchedCitiesOptions, deleteSearchedCityOption} = locationSlice.actions;
