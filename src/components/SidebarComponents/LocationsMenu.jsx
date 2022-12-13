@@ -47,8 +47,10 @@ export default function LocationsMenu() {
 
   return (
     <div className='search-menu'>
-      <MdClear className='close-icon' onClick={() => handleClose()}/>
-      <form onSubmit={(e) => handleSubmit(e)}>  
+      <div className='close-icon'>
+        <MdClear onClick={() => handleClose()}/>
+      </div>
+      <form onSubmit={(e) => handleSubmit(e)} className='search-form'>  
         <div className='search-input'>
           <IoMdSearch className='search-icon'/>
           <input value={searchedCity} type='text' placeholder='search location' onChange={(e) => handleChange(e)} />
