@@ -24,7 +24,7 @@ export default function LocationsOptionsSearching({isLoading}) {
       {isLoading ? <p>Searching for cities...</p> : cities.map(city => 
       <div className='searching-option' key={uuid()} onClick={() => handleClick(city)}>
         <div className='-info'>
-          <h3>{city.city}</h3>
+          <h3>{city.city ? city.city : city.state}</h3>
           {city.state && <p>{city.state}</p>}
         </div>
         <div className='-flag'>

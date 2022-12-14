@@ -52,8 +52,8 @@ export default function TodayWeather() {
 
   useEffect(() => {
     if(successLocation) {
-      const {city, country_code, timezone, lat, lon, state: stateName} = currentLocationInfo.features[0].properties;
-
+      let {city, country_code, timezone, lat, lon, state: stateName} = currentLocationInfo.features[0].properties;
+      city = city ? city : stateName;
       dispatch(setCurrentLocationInfo({
         city,
         country : country_code,
