@@ -298,4 +298,25 @@
 }
 .weather-section.open-menu {
   display: none;
+}
+
+.sidebar .today-weather-menu .loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 300px;
+  font-size: 1.5rem;
+  color: hsl(243deg, 10%, 66%);
+}
+.sidebar .today-weather-menu .loading::after {
+  -webkit-animation: 0.75s ease-out infinite spinner both;
+          animation: 0.75s ease-out infinite spinner both;
+  border: solid 5px rgba(255, 255, 255, 0);
+  border-bottom-color: hsl(243deg, 10%, 66%);
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  width: 40px;
 }/*# sourceMappingURL=main.css.map */
