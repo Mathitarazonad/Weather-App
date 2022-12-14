@@ -9,7 +9,8 @@ export default function LocationsOptionsSearching({isLoading}) {
   const citiesSaved = useSelector(store => store.locations.searchedCitiesOptions)
 
   const handleClick = cityOption => {
-    const {city, country_code, lat, lon, timezone, state} = cityOption;
+    let {city, country_code, lat, lon, timezone, state} = cityOption;
+    city = city ? city : state;
     if (citiesAreNotEqual(citiesSaved, city, state)) {
       dispatch(setCurrentLocationInfo({city: city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
       dispatch(setSearchedCitiesOptions({city:  city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
