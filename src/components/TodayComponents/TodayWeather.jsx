@@ -36,7 +36,6 @@ export default function TodayWeather() {
   });
   const {data: currentLocationInfo , isSuccess: successLocation} = useGetLocationByCoordsQuery({latitude, longitude});
 
-
   useEffect(() => {
     if (successWeather) {
       dispatch(setCurrentWeather({
@@ -129,7 +128,7 @@ export default function TodayWeather() {
           </div>
         </div>
       </div></> : 
-      <div className='today-weather-loading'>
+      <div className='loading'>
         <h2>Loading...</h2>
       </div>}
     </div>
