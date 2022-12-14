@@ -1,0 +1,148 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.search-menu {
+  top: 0; bottom: 0;
+  position: fixed;
+  background-color: $Dark-bg-color;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .close-icon {
+    width: 100%;
+    text-align: end;
+    color: $Dark-text-color;
+
+    svg {
+      font-size: 1.7rem;
+    }
+  }
+
+  //Form Section
+  .search-form {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+
+    .search-input {
+      border: 1px solid $Dark-text-color;
+      border-radius: 1px;
+      padding: .7rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1 1;
+
+      input {
+        background: none;
+        border: none;
+        color: $Dark-second-text-color;
+        outline: none;
+        letter-spacing: .5px;
+        font-size: 1rem;
+
+        &::placeholder {
+          font-size: 1rem;
+          color: $Dark-second-text-color;
+          letter-spacing: .5px;
+        }
+      }
+
+      .search-icon {
+        color: $Dark-second-text-color;
+        font-size: 1.35rem;
+      }
+
+    }
+
+    .search-btn {
+      color: $Dark-text-color;
+      font-weight: 500;
+      letter-spacing: 1px;
+      background-color: hsl(236, 80%, 57%);
+      border: none;
+      border-radius: 1px;
+      width: 90px;
+      padding: .5rem;
+    }
+  }
+
+  //Saved cities 
+  .locations-options-searched {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .location-option {
+      @include locationsOptions();
+
+      .-info {
+        flex: 1 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $Dark-text-color;
+        font-weight: 500;
+        letter-spacing: .5px;
+      }
+
+      .-btns-container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: .5rem;
+        .location-btn {
+          border: none;
+          background: none;
+        }
+
+        #location-select-btn {
+          font-size: 1rem;
+          color: $Dark-second-text-color;
+          display: flex;
+          align-items: center;
+        }
+
+        #location-delete-btn {
+          padding: .05rem;
+          font-size: 1rem;
+          border: 1px solid $Dark-second-text-color;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+          color: $Dark-second-text-color;
+        }
+      }
+    }
+  }
+
+  .locations-options-searching {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .searching-option {
+      @include locationsOptions();
+      letter-spacing: .5px;
+      font-weight: 500;
+
+      .-info {
+        h3 {
+
+          color: $Dark-text-color;
+        }
+
+        p {
+          color: $Dark-second-text-color;
+        }
+
+      }
+    }
+  }
+}
