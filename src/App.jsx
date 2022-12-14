@@ -12,19 +12,21 @@ function App() {
 
   const { dailyWeatherMode } = useSelector(store => store.weather);
   const { isDarkMode } = useSelector(store => store.theme);
+  const { menuIsOpen } = useSelector(store => store.menu);
 
   return (
     <div className={isDarkMode ? 'App' : 'App light-mode'}>
       <main className='main-container'>
         <Sidebar />
-        <section id='weather-section'>
+        <section className={menuIsOpen ? 'weather-section open-menu' : 'weather-section'}>
           <Buttons />
           <WeatherOptions />
           {dailyWeatherMode ? <WeekWeather /> : <HourlyWeather />}
           <TodayDetails />
+          <footer>Created by <a href='#'><b>MathiTarazonad</b></a> - Challenge from <a href='#'><b>devChallenges.io</b></a></footer>
         </section>
       </main>
-      <footer>Created by <a href='#'><b>MathiTarazonad</b></a> - Challenge from <a href='#'><b>devChallenges.io</b></a></footer>
+      
     </div>
   );
 }
