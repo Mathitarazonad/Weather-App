@@ -11,8 +11,8 @@ export default function LocationsOptionsSearching({isLoading}) {
   const handleClick = cityOption => {
     const {city, country_code, lat, lon, timezone, state} = cityOption;
     if (citiesAreNotEqual(citiesSaved, city, state)) {
-      dispatch(setCurrentLocationInfo({city, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
-      dispatch(setSearchedCitiesOptions({city, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
+      dispatch(setCurrentLocationInfo({city: city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
+      dispatch(setSearchedCitiesOptions({city:  city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
       dispatch(setIfSearchingCities(false));
       dispatch(setSearchedCity(''));
       dispatch(setCitiesOptions([]))
@@ -25,7 +25,7 @@ export default function LocationsOptionsSearching({isLoading}) {
       <div className='searching-option' key={uuid()} onClick={() => handleClick(city)}>
         <div className='-info'>
           <h3>{city.city}</h3>
-          <p>{city.state}</p>
+          {city.state && <p>{city.state}</p>}
         </div>
         <div className='-flag'>
           <img src={`https://flagcdn.com/48x36/${city.country_code}.png`} alt={city.country+'Flag'} />
