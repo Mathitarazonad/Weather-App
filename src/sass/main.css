@@ -1,7 +1,301 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@300;400;500;600&display=swap");
+.sidebar {
+  min-height: 100vh;
+  background-color: hsl(234deg, 32%, 17%);
+  padding-bottom: 1rem;
+}
+.sidebar .__locations-btns {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar .__locations-btns .search-btn {
+  border: none;
+  background: none;
+  color: hsl(240deg, 9%, 91%);
+  background-color: hsl(230deg, 5%, 45%);
+  padding: 0.5rem 1rem;
+  border-radius: 1px;
+  box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.185);
+}
+.sidebar .__locations-btns .get-position-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(230deg, 5%, 45%);
+}
+.sidebar .__locations-btns .get-position-btn svg {
+  color: hsl(240deg, 9%, 91%);
+  width: 23px;
+  height: 23px;
+}
+.sidebar .__images {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.sidebar .__images .-background {
+  z-index: 3;
+}
+.sidebar .__images .current-weather {
+  margin-top: -14rem;
+  height: 135px;
+}
+.sidebar .__information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sidebar .__information .current-temperature {
+  display: flex;
+  justify-content: center;
+}
+.sidebar .__information .current-temperature :first-child {
+  color: hsl(240deg, 9%, 91%);
+  font-size: 10rem;
+  font-weight: 600;
+  margin-top: -3rem;
+}
+.sidebar .__information .current-temperature :last-child {
+  color: hsl(243deg, 10%, 66%);
+  font-size: 4rem;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+.sidebar .__information h2 {
+  color: hsl(243deg, 10%, 66%);
+  font-size: 2.25rem;
+  text-align: center;
+}
+.sidebar .__information .-current-details {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  color: hsl(243deg, 10%, 66%);
+}
+.sidebar .__information .-current-details .-dates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.35rem;
+  gap: 1rem;
+}
+.sidebar .__information .-current-details .-dates svg {
+  font-size: 0.5rem;
+}
+.sidebar .__information .-current-details .-location {
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+}
+.sidebar .__information .-current-details .-location svg {
+  font-size: 2rem;
+}
+
+@-webkit-keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-height: 825px) {
+  .sidebar .__images .-background {
+    width: 140%;
+  }
+  .sidebar .__images .current-weather {
+    height: 120px;
+    margin-top: -10rem;
+  }
+  .sidebar .__information .current-temperature {
+    align-items: center;
+  }
+  .sidebar .__information .current-temperature :first-child {
+    font-size: 5rem;
+  }
+  .sidebar .__information .current-temperature :last-child {
+    margin-top: -1rem;
+  }
+}
+.search-menu {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: hsl(234deg, 32%, 17%);
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.search-menu .close-icon {
+  width: 100%;
+  text-align: end;
+  color: hsl(240deg, 9%, 91%);
+}
+.search-menu .close-icon svg {
+  font-size: 1.7rem;
+}
+.search-menu .search-form {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.search-menu .search-form .search-input {
+  border: 1px solid hsl(240deg, 9%, 91%);
+  border-radius: 1px;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1 1;
+}
+.search-menu .search-form .search-input input {
+  background: none;
+  border: none;
+  color: hsl(243deg, 10%, 66%);
+  outline: none;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+.search-menu .search-form .search-input input::-moz-placeholder {
+  font-size: 1rem;
+  color: hsl(243deg, 10%, 66%);
+  letter-spacing: 0.5px;
+}
+.search-menu .search-form .search-input input:-ms-input-placeholder {
+  font-size: 1rem;
+  color: hsl(243deg, 10%, 66%);
+  letter-spacing: 0.5px;
+}
+.search-menu .search-form .search-input input::placeholder {
+  font-size: 1rem;
+  color: hsl(243deg, 10%, 66%);
+  letter-spacing: 0.5px;
+}
+.search-menu .search-form .search-input .search-icon {
+  color: hsl(243deg, 10%, 66%);
+  font-size: 1.35rem;
+}
+.search-menu .search-form .search-btn {
+  color: hsl(240deg, 9%, 91%);
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: hsl(236deg, 80%, 57%);
+  border: none;
+  border-radius: 1px;
+  width: 90px;
+  padding: 0.5rem;
+}
+.search-menu .locations-options-searched {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.search-menu .locations-options-searched .location-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  border: 1px solid hsl(243deg, 10%, 66%);
+  border-radius: 1px;
+}
+.search-menu .locations-options-searched .location-option .-info {
+  flex: 1 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(240deg, 9%, 91%);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.search-menu .locations-options-searched .location-option .-btns-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.5rem;
+}
+.search-menu .locations-options-searched .location-option .-btns-container .location-btn {
+  border: none;
+  background: none;
+}
+.search-menu .locations-options-searched .location-option .-btns-container #location-select-btn {
+  font-size: 1rem;
+  color: hsl(243deg, 10%, 66%);
+  display: flex;
+  align-items: center;
+}
+.search-menu .locations-options-searched .location-option .-btns-container #location-delete-btn {
+  padding: 0.05rem;
+  font-size: 1rem;
+  border: 1px solid hsl(243deg, 10%, 66%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: hsl(243deg, 10%, 66%);
+}
+.search-menu .locations-options-searching {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.search-menu .locations-options-searching .searching-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  border: 1px solid hsl(243deg, 10%, 66%);
+  border-radius: 1px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+.search-menu .locations-options-searching .searching-option .-info h3 {
+  color: hsl(240deg, 9%, 91%);
+}
+.search-menu .locations-options-searching .searching-option .-info p {
+  color: hsl(243deg, 10%, 66%);
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.weather-section img {
+  width: 10px;
+}
+.weather-section.open-menu {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
