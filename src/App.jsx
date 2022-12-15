@@ -20,8 +20,10 @@ function App() {
         <Sidebar />
         <section className={menuIsOpen ? 'weather-section open-menu' : 'weather-section'}>
           <Buttons />
-          <WeatherOptions />
-          {dailyWeatherMode ? <WeekWeather /> : <HourlyWeather />}
+          <div className='all-weathers'>
+            <WeatherOptions />
+            {dailyWeatherMode ? <WeekWeather /> : <HourlyWeather />}
+          </div>
           <TodayDetails />
           <footer>Created by <a href='#'><b>MathiTarazonad</b></a> - Challenge from <a href='#'><b>devChallenges.io</b></a></footer>
         </section>
