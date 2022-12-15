@@ -20,6 +20,7 @@ export default function HourlyWeather() {
     data: hourlyInfo,
     isSuccess,
     isLoading,
+    isFetching
   } = useGetHourlyWeatherQuery({ latitude, longitude, timezone, isCelsius });
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function HourlyWeather() {
     }
   }, [hourlyInfo]);
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <div className='hourly-weather-loading'>Loading Weather...</div>;
   } else if (isSuccess) {
     return (

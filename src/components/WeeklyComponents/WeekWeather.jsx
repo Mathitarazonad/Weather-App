@@ -1,5 +1,5 @@
 import DailyWeather from './DailyWeather';
-import { useGetTodayWeatherQuery } from '../../apis/weatherApi';
+import { useGetHourlyWeatherQuery, useGetTodayWeatherQuery } from '../../apis/weatherApi';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getArrayOfDays } from '../functions';
@@ -13,6 +13,9 @@ export default function WeekWeather() {
   const { isCelsius } = useSelector((store) => store.temperature);
   const { dailyWeather } = useSelector((store) => store.weather);
   const { data: dailyWeatherData, isSuccess } = useGetTodayWeatherQuery({latitude, longitude, timezone, isCelsius,});
+
+  //This is for get the cache and then do not need to fetch when user clicks in hourly weather
+  const {data: hourly} = useGetHourlyWeatherQuery({latitude, longitude, isCelsius, timezone});
 
   useEffect(() => {
     if (isSuccess) {
