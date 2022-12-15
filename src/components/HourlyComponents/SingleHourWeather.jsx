@@ -7,7 +7,7 @@ export default function SingleHourWeather({hour, weatherCode, temperature}) {
   return (
     <div className='single-hour-weather-container'>
       <h3>{hour}</h3>
-      <img className='hour-weather-img' src={getWeatherImg(weatherCode)} style={{width:80}}/>
+      <img className='hour-weather-img' src={getWeatherImg(weatherCode)} />
       <p>{roundTemperature(temperature)}°{getTemperatureFormat(isCelsius)}</p>
     </div>
   );
