@@ -1,8 +1,8 @@
-@use 'variables' as *;
+@use 'abstracts' as *;
 
 .sidebar {
   min-height: 100vh;
-  background-color: $Dark-bg-color;
+  background-color: $Dark-sidebar-bg;
   padding-bottom: 1rem;
 
   .__locations-btns {
@@ -16,25 +16,26 @@
       background: none;
       color: $Dark-text-color;
       background-color: $Dark-bg-btn;
-      padding: .5rem 1rem;
+      padding: 1rem;
+      font-size: 1.025rem;
       border-radius: 1px;
       box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.185);
     }
 
     .get-position-btn {
-      width: 35px;
-      height: 35px;
+      width: 50px;
+      height: 50px;
       border: none;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: $Dark-bg-btn;
+      box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.185);
 
       svg {
         color: $Dark-text-color;
-        width: 23px;
-        height: 23px;
+        font-size: 2rem;
       }
     }
   }
@@ -123,11 +124,6 @@
     }
 
   }
-}
-
-@keyframes spinner {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
 }
 
 @media screen and (max-height: 825px) {
