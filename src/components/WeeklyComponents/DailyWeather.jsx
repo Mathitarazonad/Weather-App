@@ -7,7 +7,7 @@ export default function DailyWeather({dayName, day, month, weatherCode, minTemp,
   return (
     <div className='day-weather'>
       <div className='dates'>
-        <p>{dayName}, </p> <p>{day} {month}</p>
+        <p>{dayName}</p> {dayName !== 'Today' && dayName !== 'Tomorrow' && <p>, {day} {month}</p>}
       </div>
       <div className='day-image'>
         <img src={getWeatherImg(weatherCode)} />
