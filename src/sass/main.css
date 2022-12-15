@@ -551,24 +551,6 @@
     height: 25vh;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Raleway", sans-serif;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-.weather-section {
-  background-color: hsl(248deg, 35%, 8%);
-}
-.weather-section img {
-  width: 10px;
-}
-.weather-section.open-menu {
-  display: none;
-}
-
 .sidebar .today-weather-menu .loading {
   display: flex;
   flex-direction: column;
@@ -588,4 +570,45 @@
   content: "";
   height: 40px;
   width: 40px;
+}
+
+.hourly-weather-loading, .daily-weather-loading {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  font-size: 2.5rem;
+  color: hsl(243deg, 10%, 66%);
+}
+.hourly-weather-loading::after, .daily-weather-loading::after {
+  width: 100%;
+  -webkit-animation: 0.75s ease-out infinite spinner both;
+          animation: 0.75s ease-out infinite spinner both;
+  border: solid 5px rgba(255, 255, 255, 0);
+  border-bottom-color: hsl(243deg, 10%, 66%);
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  width: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.weather-section {
+  background-color: hsl(248deg, 35%, 8%);
+}
+.weather-section img {
+  width: 10px;
+}
+.weather-section.open-menu {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
