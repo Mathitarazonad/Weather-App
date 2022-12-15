@@ -1,0 +1,127 @@
+@use 'abstracts' as *;
+
+.weather-section {
+  padding: 1.5rem;
+
+  .all-weathers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+  }
+
+  .weather-mode-btns-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+    .weather-mode-btn {
+      @include weatherBtns();
+    }
+  }
+
+  .weather-list-container{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    .day-weather {
+      width: 150px;
+      background-color: $Dark-sidebar-bg;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      gap: 1rem;
+
+      .dates {
+        font-size: 1.2rem;
+        display: flex;
+        color: $Dark-text-color;
+      }
+
+      .day-image img{
+        width: 60px;
+      }
+
+      .day-temperatures {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        font-size: 1.2rem;
+
+        :first-child {
+          color: $Dark-second-text-color;
+        }
+
+        :last-child {
+          color: $Dark-text-color;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .hourly-weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .hourly-btns-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 265px;
+
+      .hourly-btn {
+        background: none;
+        border: none;
+        color: $Dark-second-text-color;
+        background-color: $Dark-sidebar-bg;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem;
+      }
+    }
+
+    .hourly-array {
+      display: none;
+
+      &._selected {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+
+        .single-hour-weather-container {
+          width: 150px;
+          background-color: $Dark-sidebar-bg;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          gap: 1rem;
+          color: $Dark-text-color;
+          font-size: 1.125rem;
+
+          .hour-weather-img {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-height: 750px) {
+  .day-weather, .single-hour-weather-container {
+    font-size: 1.2rem;
+    height: 25vh;
+  }  
+}

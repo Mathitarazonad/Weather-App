@@ -1,6 +1,8 @@
 @use 'variables' as *;
 @use 'sidebar';
 @use 'locationsmenu';
+@use 'buttons';
+@use 'weatherLists';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@300;400;500;600&display=swap');
 
 * {
@@ -13,6 +15,7 @@
 
 //This is just for the moment
 .weather-section {
+  background-color: $Dark-weather-bg;
   img {
     width: 10px;
   }
