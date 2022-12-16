@@ -598,7 +598,6 @@
   color: hsl(243deg, 10%, 66%);
 }
 .hourly-weather-loading::after, .daily-weather-loading::after {
-  width: 100%;
   -webkit-animation: 0.75s ease-out infinite spinner both;
           animation: 0.75s ease-out infinite spinner both;
   border: solid 5px rgba(255, 255, 255, 0);
@@ -607,6 +606,28 @@
   content: "";
   height: 40px;
   width: 40px;
+}
+
+.locations-options-loading {
+  gap: 2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: hsl(243deg, 10%, 66%);
+  padding-top: 2rem;
+}
+.locations-options-loading::after {
+  content: "";
+  width: 100%;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0);
+  border-bottom-color: hsl(243deg, 10%, 66%);
+  -webkit-animation: spinner 0.75s infinite ease-out both;
+          animation: spinner 0.75s infinite ease-out both;
 }
 
 .today-details {

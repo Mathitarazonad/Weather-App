@@ -39,7 +39,6 @@
   color: $Dark-second-text-color;
 
   &::after {
-    width: 100%;
     animation: .75s ease-out infinite spinner both;
     border: solid 5px #ffffff00;
     border-bottom-color: $Dark-second-text-color;
@@ -47,6 +46,29 @@
     content: "";
     height: 40px;
     width: 40px;
+  }
+}
+
+//When user searchs for a country {
+.locations-options-loading {
+  gap: 2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $Dark-second-text-color;
+  padding-top: 2rem;
+
+  &::after {
+    content: "";
+    width: 100%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-bottom-color: $Dark-second-text-color;
+    animation: spinner .75s infinite ease-out both;
   }
 }
 

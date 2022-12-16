@@ -20,9 +20,17 @@ export default function LocationsOptionsSearching({isLoading}) {
     }
   }
 
+  if (isLoading) {
+    return (
+    <div className='locations-options-loading'>
+      <p>Searching for cities...</p>
+    </div>
+    )
+  }
+
   return (
     <div className='locations-options-searching'>
-      {isLoading ? <p>Searching for cities...</p> : cities.map(city => 
+      {cities.map(city => 
       <div className='searching-option' key={uuid()} onClick={() => handleClick(city)}>
         <div className='-info'>
           <h3>{city.city ? city.city : city.state}</h3>
