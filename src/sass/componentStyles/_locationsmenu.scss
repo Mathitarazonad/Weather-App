@@ -1,5 +1,4 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use '../abstracts/abstracts' as *;
 
 .search-menu {
   top: 0; bottom: 0;

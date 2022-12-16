@@ -1,9 +1,9 @@
-@use 'variables' as *;
-@use 'sidebar';
-@use 'locationsmenu';
-@use 'buttons';
-@use 'weatherLists';
-@use 'loadingElements';
+@use './abstracts/abstracts' as *;
+@use './componentStyles/sidebar';
+@use './componentStyles/locationsmenu';
+@use './componentStyles/buttons';
+@use './componentStyles/weatherLists';
+@use './componentStyles/loadingElements';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@300;400;500;600&display=swap');
 
 * {
