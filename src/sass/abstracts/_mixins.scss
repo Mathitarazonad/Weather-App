@@ -45,3 +45,13 @@
     transition: .5s;
   }
 }
+
+@mixin todayDetail () {
+  display: flex;
+  flex-direction: column;
+  background-color: $Dark-sidebar-bg;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  color: $Dark-text-color; 
+}
