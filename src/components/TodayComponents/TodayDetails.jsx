@@ -34,30 +34,32 @@ export default function () {
         <h3 className='details-titles'>Wind Status</h3>
         <p><b className='current-detail'>{(windSpeed)}</b>km/h</p>
         <div className='wind-direction'>
-          <FaLocationArrow className='wind-icon'/>
+          <FaLocationArrow className='wind-icon' style={{transform: `rotate(${windDirection}deg)`}}/>
           <p>{getCompassDirection(windDirection)}</p>
         </div>
       </div>
       <div className='current-humidity'>
         <h3 className='details-titles'>Humidity</h3>
-        <p className='current-detail'>{humidity}%</p>
+        <p><b className='current-detail'>{humidity}</b>%</p>
         <div className='progress-bar-container'>
           <div className='percentage-points'>
             <p>0</p>
             <p>50</p>
             <p>100</p>
           </div>
-          <div className='progress-bar'></div>
+          <div className='progress-bar'>
+            <div className='bar' style={{width: `${humidity}%`}}></div>
+          </div>
           <p>%</p>
         </div>
       </div>
       <div className='current-visibility'>
         <h3 className='details-titles'>Visibility</h3>
-        <p className='current-detail'>{visibility >= 1 ? Math.round(visibility) : (visibility)}</p><p>km</p>
+        <p><b className='current-detail'>{visibility >= 1 ? Math.round(visibility) : (visibility)}</b>km</p>
       </div>
       <div className='current-apparent-temperature'>
         <h3 className='details-titles'>Apparent Temperature</h3>
-        <p className='current-detail'>{roundTemperature(apparentTemperature)}°</p><p>{getTemperatureFormat(isCelsius)}</p>
+        <p><b className='current-detail'>{roundTemperature(apparentTemperature)}</b>°{getTemperatureFormat(isCelsius)}</p>
       </div>
     </div>
     )
