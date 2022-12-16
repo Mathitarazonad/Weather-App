@@ -609,6 +609,123 @@
   width: 40px;
 }
 
+.today-details {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.today-details h2 {
+  font-size: 1.5rem;
+  color: hsl(240deg, 9%, 91%);
+}
+.today-details .details-titles {
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(240deg, 9%, 91%);
+}
+.today-details .current-detail {
+  font-size: 3.5rem;
+  margin-right: 0.5rem;
+}
+.today-details .current-wind {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(234deg, 32%, 17%);
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  color: hsl(240deg, 9%, 91%);
+}
+.today-details .current-wind p {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.today-details .current-wind .wind-direction {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.today-details .current-wind .wind-direction p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.today-details .current-wind .wind-direction svg {
+  rotate: -46deg;
+  background-color: hsl(230deg, 5%, 45%);
+  border-radius: 50%;
+  padding: 0.3rem;
+  width: 25px;
+  height: 25px;
+}
+.today-details .current-humidity {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(234deg, 32%, 17%);
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  color: hsl(240deg, 9%, 91%);
+}
+.today-details .current-humidity p {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.today-details .current-humidity .progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 80%;
+}
+.today-details .current-humidity .progress-bar-container .percentage-points {
+  display: flex;
+  justify-content: space-between;
+}
+.today-details .current-humidity .progress-bar-container .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: hsl(240deg, 9%, 91%);
+  border-radius: 25px;
+}
+.today-details .current-humidity .progress-bar-container .progress-bar .bar {
+  background-color: hsl(53deg, 100%, 70%);
+  height: 100%;
+  border-radius: 25px;
+}
+.today-details .current-humidity .progress-bar-container p {
+  font-size: 1rem;
+}
+.today-details .current-humidity .progress-bar-container:last-child {
+  text-align: end;
+}
+.today-details .current-visibility {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(234deg, 32%, 17%);
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  color: hsl(240deg, 9%, 91%);
+}
+.today-details .current-visibility p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.today-details .current-apparent-temperature {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(234deg, 32%, 17%);
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  color: hsl(240deg, 9%, 91%);
+}
+.today-details .current-apparent-temperature p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 * {
   margin: 0;
   padding: 0;
