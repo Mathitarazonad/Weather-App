@@ -12,7 +12,9 @@ export default function WeekWeather() {
   const { timezone } = useSelector((store) => store.locations.current);
   const { isCelsius } = useSelector((store) => store.temperature);
   const { dailyWeather } = useSelector((store) => store.weather);
-  const { data: dailyWeatherData, isSuccess, isLoading, isFetching } = useGetTodayWeatherQuery({latitude, longitude, timezone, isCelsius,});
+  const { data: dailyWeatherData, isSuccess, isLoading, isFetching } = useGetTodayWeatherQuery({latitude, longitude, timezone, isCelsius}, {
+    pollingInterval: 180000,
+  });
 
   //This is for get the cache and then do not need to fetch when user clicks in hourly weather
   const {data: hourly} = useGetHourlyWeatherQuery({latitude, longitude, isCelsius, timezone});
