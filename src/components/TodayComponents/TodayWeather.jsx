@@ -107,7 +107,7 @@ export default function TodayWeather() {
       </div>
       {successWeather ? <> <div className='__images'>
         <img src={CloudBackground} alt='cloudBackground' className='-background'/>
-        <img src={getWeatherImg(weatherCode)} alt='-currentWeather' className='current-weather'/>
+        <img src={getWeatherImg(weatherCode, hour)} alt='-currentWeather' className='current-weather'/>
       </div>
       <div className='__information'>
         <div className='current-temperature'>
