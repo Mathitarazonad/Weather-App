@@ -1,0 +1,14 @@
+@use '../abstracts/abstracts' as *;
+
+footer {
+  font-size: 1.05rem;
+  text-align: center;
+  color: $Dark-second-text-color;
+  
+  a {
+    text-decoration: none;
+    color: $Dark-text-color;
+    font-weight: 600;
+    letter-spacing: .5px;
+  }
+}

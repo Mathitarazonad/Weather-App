@@ -727,6 +727,18 @@
   font-weight: 600;
 }
 
+footer {
+  font-size: 1.05rem;
+  text-align: center;
+  color: hsl(243deg, 10%, 66%);
+}
+footer a {
+  text-decoration: none;
+  color: hsl(240deg, 9%, 91%);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 * {
   margin: 0;
   padding: 0;
