@@ -20,7 +20,7 @@ export default function LocationOption({city}) {
   };
 
   const handleDelete = city => {
-    dispatch(deleteSearchedCityOption(city))
+    dispatch(deleteSearchedCityOption(city));
   }
 
   return (
@@ -28,6 +28,7 @@ export default function LocationOption({city}) {
       <div className='-info'>
         <div className='-name' onClick={() => handleClick()}>
           <p>{city.city}</p>
+          <p>{city.stateName}</p>
         </div>
         <img src={`https://flagcdn.com/48x36/${city.country}.png`} className='location-flag' alt={`${city.country}Flag`}/>
       </div>
