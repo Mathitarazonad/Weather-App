@@ -28,14 +28,20 @@
     display: flex;
     gap: 1rem;
 
-    .search-input {
+    .input {
       border: 1px solid $Dark-text-color;
       border-radius: 1px;
       padding: .7rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
       flex: 1 1;
+
+      .input-search {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
 
       input {
         background: none;
@@ -57,6 +63,13 @@
         font-size: 1.35rem;
       }
 
+      .cancel-search {
+        width: 20px; height: 20px;
+        color: $Dark-second-text-color;
+        border-radius: 50%;
+        border: 1px solid $Dark-second-text-color;
+        padding: .1rem;
+      }
     }
 
     .search-btn {

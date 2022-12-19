@@ -213,16 +213,21 @@
   display: flex;
   gap: 1rem;
 }
-.search-menu .search-form .search-input {
+.search-menu .search-form .input {
   border: 1px solid hsl(240deg, 9%, 91%);
   border-radius: 1px;
   padding: 0.7rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
   flex: 1 1;
 }
-.search-menu .search-form .search-input input {
+.search-menu .search-form .input .input-search {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.search-menu .search-form .input input {
   background: none;
   border: none;
   color: hsl(243deg, 10%, 66%);
@@ -230,24 +235,32 @@
   letter-spacing: 0.5px;
   font-size: 1rem;
 }
-.search-menu .search-form .search-input input::-moz-placeholder {
+.search-menu .search-form .input input::-moz-placeholder {
   font-size: 1rem;
   color: hsl(243deg, 10%, 66%);
   letter-spacing: 0.5px;
 }
-.search-menu .search-form .search-input input:-ms-input-placeholder {
+.search-menu .search-form .input input:-ms-input-placeholder {
   font-size: 1rem;
   color: hsl(243deg, 10%, 66%);
   letter-spacing: 0.5px;
 }
-.search-menu .search-form .search-input input::placeholder {
+.search-menu .search-form .input input::placeholder {
   font-size: 1rem;
   color: hsl(243deg, 10%, 66%);
   letter-spacing: 0.5px;
 }
-.search-menu .search-form .search-input .search-icon {
+.search-menu .search-form .input .search-icon {
   color: hsl(243deg, 10%, 66%);
   font-size: 1.35rem;
+}
+.search-menu .search-form .input .cancel-search {
+  width: 20px;
+  height: 20px;
+  color: hsl(243deg, 10%, 66%);
+  border-radius: 50%;
+  border: 1px solid hsl(243deg, 10%, 66%);
+  padding: 0.1rem;
 }
 .search-menu .search-form .search-btn {
   color: hsl(240deg, 9%, 91%);
