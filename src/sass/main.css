@@ -748,6 +748,11 @@
   font-weight: 600;
 }
 
+@media screen and (min-height: 850px) {
+  .today-details {
+    gap: 2rem;
+  }
+}
 footer {
   font-size: 1.05rem;
   text-align: center;
