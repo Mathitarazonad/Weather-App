@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { IoMdSearch } from 'react-icons/io';
+import { IoMdClose, IoMdSearch } from 'react-icons/io';
 import { MdClear } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIfMenuOpen } from '../../store/menuSlice';
@@ -38,6 +38,13 @@ export default function LocationsMenu() {
     }
   };
 
+  const handleCancelSearch = () => {
+    if (searchedCity.length >= 3 && isSearchingCities) {
+      dispatch(setSearchedCity(''));
+      dispatch(setIfSearchingCities(false));
+    }
+  }
+
   useEffect(() => {
     if (isSuccess) {
       dispatch(setCitiesOptions(foundCitiesData.features.map(feature => feature.properties)))
@@ -51,9 +58,12 @@ export default function LocationsMenu() {
         <MdClear onClick={() => handleClose()}/>
       </div>
       <form onSubmit={(e) => handleSubmit(e)} className='search-form'>  
-        <div className='search-input'>
-          <IoMdSearch className='search-icon'/>
-          <input value={searchedCity} type='text' placeholder='search location' onChange={(e) => handleChange(e)} />
+        <div className='input'>
+          <div className='input-search'>
+            <IoMdSearch className='search-icon'/>
+            <input value={searchedCity} type='text' placeholder='search location' onChange={(e) => handleChange(e)} />
+          </div>
+          <IoMdClose className='cancel-search' onClick={() => handleCancelSearch()}/>
         </div>
         <button className='search-btn' type='submit'>Search</button>
       </form>
