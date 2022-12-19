@@ -88,6 +88,12 @@
         color: $Dark-text-color;
         font-weight: 500;
         letter-spacing: .5px;
+
+        .-name {
+          :last-child {
+            color: $Dark-second-text-color;
+          }
+        }
       }
 
       .-btns-container {
@@ -133,7 +139,6 @@
 
       .-info {
         h3 {
-
           color: $Dark-text-color;
         }
 

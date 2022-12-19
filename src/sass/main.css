@@ -282,6 +282,9 @@
   font-weight: 500;
   letter-spacing: 0.5px;
 }
+.search-menu .locations-options-searched .location-option .-info .-name :last-child {
+  color: hsl(243deg, 10%, 66%);
+}
 .search-menu .locations-options-searched .location-option .-btns-container {
   display: flex;
   flex-direction: row-reverse;
