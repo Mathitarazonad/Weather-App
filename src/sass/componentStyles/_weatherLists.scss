@@ -183,7 +183,7 @@
   }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 650px) and (max-width: 1000px){
   .weather-section {
     padding: $Tablet-padding;
 
@@ -223,4 +223,29 @@
       }
     }
   }
+}
+
+@media screen and (min-width: 900px) and (max-width:1000px) {
+  .all-weathers {
+    gap: 2rem !important;
+    .weather-mode-btns-container {
+      .weather-mode-btn {
+        width: 385px;
+      }
+    }
+
+    .hourly-weather-container {
+      gap: 2rem;
+      .hourly-btns-container {
+        gap: 667px;
+        .hourly-btn {
+          padding: 0;
+          font-size: 1.5rem;
+          width: 65px;
+          height: 65px;
+        }
+      }
+    }
+  }
+  
 }

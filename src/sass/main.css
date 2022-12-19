@@ -187,7 +187,7 @@
     margin-top: -1rem;
   }
 }
-@media screen and (min-width: 650px) and (max-width: 900px) {
+@media screen and (min-width: 650px) and (max-width: 1000px) {
   .sidebar {
     display: flex;
     justify-content: center;
@@ -219,6 +219,22 @@
   }
   .sidebar .__information .-current-details .-dates, .sidebar .__information .-current-details .-location {
     font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .sidebar .__images .-background {
+    width: 100%;
+    max-width: none;
+  }
+  .sidebar .__images .current-weather {
+    height: 160px;
+    margin-top: -17rem;
+  }
+  .sidebar .__information {
+    gap: 2.5rem;
+  }
+  .sidebar .__information .-current-details {
+    gap: 3rem;
   }
 }
 .search-menu {
@@ -381,7 +397,7 @@
   color: hsl(243deg, 10%, 66%);
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 650px) and (max-width: 1000px) {
   .search-menu {
     padding: 2.5rem;
     max-width: 660px;
@@ -681,7 +697,7 @@
     width: 180px;
   }
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 650px) and (max-width: 1000px) {
   .weather-section {
     padding: 2.5rem;
   }
@@ -712,6 +728,26 @@
   .weather-section .hourly-weather-container .hourly-btns-container .hourly-btn {
     width: 40px;
     height: 40px;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+  .all-weathers {
+    gap: 2rem !important;
+  }
+  .all-weathers .weather-mode-btns-container .weather-mode-btn {
+    width: 385px;
+  }
+  .all-weathers .hourly-weather-container {
+    gap: 2rem;
+  }
+  .all-weathers .hourly-weather-container .hourly-btns-container {
+    gap: 667px;
+  }
+  .all-weathers .hourly-weather-container .hourly-btns-container .hourly-btn {
+    padding: 0;
+    font-size: 1.5rem;
+    width: 65px;
+    height: 65px;
   }
 }
 .sidebar .today-weather-menu .loading {
