@@ -151,3 +151,52 @@
     }
   }
 }
+
+@media screen and (min-width: 650px) and (max-width: 900px){
+  .sidebar {
+    display: flex;
+    justify-content: center;
+    padding-bottom: $Tablet-padding;
+
+    .__locations-btns {
+      min-width: 100vw;
+      padding: 2.5rem;
+      padding-bottom: 0;
+
+      .search-btn {
+        font-size: 1.4rem;
+      }
+
+      .get-position-btn {
+        width: 60px;
+        height: 60px;
+        svg {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .__images {
+      .-background {
+        max-width: 680px;
+      }
+      .current-weather {
+        height: 150px;
+      }
+    }
+
+    .__information {
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      .-current-details {
+        .-dates, .-location {
+          font-size: 1.5rem;
+        }
+      }
+
+    }
+
+  }
+}

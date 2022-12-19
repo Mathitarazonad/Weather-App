@@ -117,3 +117,18 @@
     gap: 2rem;
   }
 }
+
+@media screen and (min-width: 650px) {
+  .today-details {
+    min-height: auto;
+    .details-titles {
+      font-size: 1.1rem;
+    }
+
+    .current-humidity {
+      .progress-bar-container p{
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

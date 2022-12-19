@@ -53,3 +53,14 @@
   }
 
 }
+
+@media screen and (min-width: 650px) {
+  .buttons-section {
+    padding-right: $Tablet-padding;
+    bottom: $Tablet-padding;
+
+    .configurations-icon {
+      padding: .9rem;
+    }
+  }
+}

@@ -187,6 +187,40 @@
     margin-top: -1rem;
   }
 }
+@media screen and (min-width: 650px) and (max-width: 900px) {
+  .sidebar {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.5rem;
+  }
+  .sidebar .__locations-btns {
+    min-width: 100vw;
+    padding: 2.5rem;
+    padding-bottom: 0;
+  }
+  .sidebar .__locations-btns .search-btn {
+    font-size: 1.4rem;
+  }
+  .sidebar .__locations-btns .get-position-btn {
+    width: 60px;
+    height: 60px;
+  }
+  .sidebar .__locations-btns .get-position-btn svg {
+    font-size: 2.5rem;
+  }
+  .sidebar .__images .-background {
+    max-width: 680px;
+  }
+  .sidebar .__images .current-weather {
+    height: 150px;
+  }
+  .sidebar .__information h2 {
+    font-size: 2.5rem;
+  }
+  .sidebar .__information .-current-details .-dates, .sidebar .__information .-current-details .-location {
+    font-size: 1.5rem;
+  }
+}
 .search-menu {
   top: 0;
   bottom: 0;
@@ -347,6 +381,12 @@
   color: hsl(243deg, 10%, 66%);
 }
 
+@media screen and (min-width: 650px) {
+  .search-menu {
+    padding: 2.5rem;
+    max-width: 660px;
+  }
+}
 .buttons-section {
   display: flex;
   flex-direction: column;
@@ -381,6 +421,13 @@
   font-weight: 600;
   background-color: hsl(244deg, 16%, 40%);
 }
+@media (min-width: 650px) {
+  .buttons-section .temperatures-container .temperature, .buttons-section .theme-btn-container .temperature {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+  }
+}
 .buttons-section .temperatures-container .temperature.selected, .buttons-section .theme-btn-container .temperature.selected {
   transition: 0.5s;
   background-color: hsl(240deg, 9%, 91%);
@@ -405,6 +452,13 @@
   background-color: hsl(240deg, 9%, 91%);
   color: hsl(234deg, 32%, 17%);
 }
+@media (min-width: 650px) {
+  .buttons-section .theme-btn-container {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+  }
+}
 .buttons-section .configurations-icon {
   transition: 0.5s;
   display: flex;
@@ -423,6 +477,13 @@
   padding: 0.6rem;
   transition: 0.5s;
 }
+@media (min-width: 650px) {
+  .buttons-section .configurations-icon {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+  }
+}
 .buttons-section .configurations-close-icon {
   transition: 0.5s;
   display: flex;
@@ -440,11 +501,27 @@
   background-color: hsl(244deg, 16%, 40%);
   padding: 0.6rem;
 }
+@media (min-width: 650px) {
+  .buttons-section .configurations-close-icon {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+  }
+}
 .buttons-section.configurations-open .temperatures-container, .buttons-section.configurations-open .theme-btn-container {
   -webkit-animation: config-open-animation 0.25s ease-out both;
           animation: config-open-animation 0.25s ease-out both;
 }
 
+@media screen and (min-width: 650px) {
+  .buttons-section {
+    padding-right: 2.5rem;
+    bottom: 2.5rem;
+  }
+  .buttons-section .configurations-icon {
+    padding: 0.9rem;
+  }
+}
 .weather-section {
   padding: 1.5rem;
 }
@@ -602,6 +679,39 @@
   }
   .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
     width: 180px;
+  }
+}
+@media screen and (min-width: 650px) {
+  .weather-section {
+    padding: 2.5rem;
+  }
+  .weather-section .weather-mode-btns-container {
+    gap: 2rem;
+  }
+  .weather-section .weather-mode-btns-container .weather-mode-btn {
+    font-size: 1.3rem;
+    padding: 1rem;
+    width: 245px;
+  }
+  .weather-section .weather-list-container .day-weather {
+    width: 250px;
+  }
+  .weather-section .weather-list-container .day-weather .dates, .weather-section .weather-list-container .day-weather .day-image, .weather-section .weather-list-container .day-weather .day-temperatures {
+    font-size: 1.5rem;
+  }
+  .weather-section .hourly-weather-container .hourly-array._selected {
+    gap: 1.5rem;
+  }
+  .weather-section .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
+    width: 250px;
+    font-size: 1.5rem;
+  }
+  .weather-section .hourly-weather-container .hourly-btns-container {
+    gap: 443px;
+  }
+  .weather-section .hourly-weather-container .hourly-btns-container .hourly-btn {
+    width: 40px;
+    height: 40px;
   }
 }
 .sidebar .today-weather-menu .loading {
@@ -790,6 +900,17 @@
 @media screen and (min-height: 850px) {
   .today-details {
     gap: 2rem;
+  }
+}
+@media screen and (min-width: 650px) {
+  .today-details {
+    min-height: auto;
+  }
+  .today-details .details-titles {
+    font-size: 1.1rem;
+  }
+  .today-details .current-humidity .progress-bar-container p {
+    font-size: 1.2rem;
   }
 }
 footer {

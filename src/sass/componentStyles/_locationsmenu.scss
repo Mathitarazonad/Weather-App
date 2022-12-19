@@ -163,3 +163,10 @@
     }
   }
 }
+
+@media screen and (min-width: 650px) {
+  .search-menu {
+    padding: $Tablet-padding;
+    max-width: 660px;
+  }
+}
