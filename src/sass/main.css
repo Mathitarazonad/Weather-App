@@ -581,6 +581,29 @@
     width: 35vw;
   }
 }
+@media screen and (min-width: 540px) {
+  .weather-section .weather-mode-btns-container {
+    gap: 2rem;
+  }
+  .weather-section .weather-mode-btns-container .weather-mode-btn {
+    width: 180px;
+  }
+  .all-weathers .weather-list-container {
+    gap: 2rem;
+  }
+  .all-weathers .weather-list-container .day-weather {
+    width: 180px;
+  }
+  .all-weathers .hourly-weather-container .hourly-btns-container {
+    gap: calc(364px - 2rem);
+  }
+  .all-weathers .hourly-weather-container .hourly-array._selected {
+    gap: 2rem;
+  }
+  .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
+    width: 180px;
+  }
+}
 .sidebar .today-weather-menu .loading {
   display: flex;
   flex-direction: column;
