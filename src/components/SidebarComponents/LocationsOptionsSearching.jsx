@@ -1,6 +1,7 @@
 import {v4 as uuid} from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentLocationInfo, setSearchedCitiesOptions, setIfSearchingCities, setSearchedCity, setCitiesOptions } from '../../store/locationSlice.js';
+import { setIfMenuOpen } from '../../store/menuSlice.js';
 import { citiesAreNotEqual } from '../functions.js'
 
 export default function LocationsOptionsSearching({isLoading}) {
@@ -15,6 +16,7 @@ export default function LocationsOptionsSearching({isLoading}) {
       dispatch(setCurrentLocationInfo({city: city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
       dispatch(setSearchedCitiesOptions({city:  city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
       dispatch(setIfSearchingCities(false));
+      dispatch(setIfMenuOpen());
       dispatch(setSearchedCity(''));
       dispatch(setCitiesOptions([]))
     }

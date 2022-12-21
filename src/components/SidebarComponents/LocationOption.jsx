@@ -1,6 +1,7 @@
 import { AiOutlineRight, AiOutlineClose } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentLocationInfo, deleteSearchedCityOption } from '../../store/locationSlice';
+import { setIfMenuOpen } from '../../store/menuSlice';
 
 export default function LocationOption({city}) {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function LocationOption({city}) {
         latitude: city.latitude,
         longitude: city.longitude
       }));
+      dispatch(setIfMenuOpen());
     }
   };
 
