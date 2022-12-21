@@ -9,7 +9,7 @@
   z-index: 9999;
   bottom: 1rem;
   right: 0;
-  padding-right: 1rem;
+  margin-right: $Mobile-padding;
 
   .temperatures-container, .theme-btn-container {
     animation: config-close-animation .25s ease-out both;

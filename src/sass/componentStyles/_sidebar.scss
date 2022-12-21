@@ -246,3 +246,16 @@
     overflow: auto;
   }
 }
+
+@media (min-width: 1400px) {
+  .sidebar, .search-menu {
+    width: 425px;
+
+    .__information {
+      gap: 3rem;
+      .-current-details {
+        gap: 4rem;
+      }
+    }
+  }
+}
