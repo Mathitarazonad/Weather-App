@@ -31,10 +31,10 @@ export default function TodayWeather() {
   const {weatherCode} = useSelector(store => store.weather.todayWeather);
 
   //RTK Query endpoints calls
-  const {data: weatherInfo, isSuccess: successWeather} = useGetTodayWeatherQuery({latitude,longitude,isCelsius,timezone}, {
+  const {data: weatherInfo, isSuccess: successWeather, isFetching: fetchingWeather} = useGetTodayWeatherQuery({latitude,longitude,isCelsius,timezone}, {
     pollingInterval : 60000,
   });
-  const {data: currentLocationInfo , isSuccess: successLocation} = useGetLocationByCoordsQuery({latitude, longitude});
+  const {data: currentLocationInfo , isSuccess: successLocation, isFetching: fetchingLocation} = useGetLocationByCoordsQuery({latitude, longitude});
 
   useEffect(() => {
     if (successWeather) {
@@ -107,7 +107,7 @@ export default function TodayWeather() {
       </div>
       {successWeather ? <> <div className='__images'>
         <img src={CloudBackground} alt='cloudBackground' className='-background'/>
-        <img src={getWeatherImg(weatherCode, hour)} alt='-currentWeather' className='current-weather'/>
+        {fetchingWeather || fetchingLocation ? <div className='loading-today-weather'></div> :<img src={getWeatherImg(weatherCode, hour)} alt='-currentWeather' className='current-weather'/>}
       </div>
       <div className='__information'>
         <div className='current-temperature'>

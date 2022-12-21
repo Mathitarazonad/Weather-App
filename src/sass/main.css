@@ -896,6 +896,17 @@
           animation: spinner 0.5s infinite ease-out both;
 }
 
+.loading-today-weather {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border-bottom-color: hsl(243deg, 10%, 66%);
+  -webkit-animation: spinner 0.75s infinite both;
+          animation: spinner 0.75s infinite both;
+  margin-top: -8rem;
+}
+
 .today-details {
   min-height: 100vh;
   display: flex;
