@@ -72,3 +72,14 @@
   }
 }
 
+//Loading for todayDetails elements 
+.today-details-loading {
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-bottom-color: $Dark-second-text-color;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  content: "";
+  animation: spinner .5s infinite ease-out both;
+}
+

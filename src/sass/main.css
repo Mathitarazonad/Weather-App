@@ -885,6 +885,17 @@
           animation: spinner 0.75s infinite ease-out both;
 }
 
+.today-details-loading {
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-bottom-color: hsl(243deg, 10%, 66%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  content: "";
+  -webkit-animation: spinner 0.5s infinite ease-out both;
+          animation: spinner 0.5s infinite ease-out both;
+}
+
 .today-details {
   min-height: 100vh;
   display: flex;

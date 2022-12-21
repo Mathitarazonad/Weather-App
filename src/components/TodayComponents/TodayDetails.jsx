@@ -11,7 +11,16 @@ export default function () {
   const {timezone} = useSelector(store => store.locations.current);
   const {isCelsius} = useSelector(store => store.temperature);
   const {humidity, visibility, windSpeed, windDirection, apparentTemperature} = useSelector(store => store.weather.todayWeather.details);
-  const {data: todayDetailsData, isSuccess} = useGetTodaysDetailsQuery({latitude, longitude, timezone, isCelsius});
+
+  const {data: todayDetailsData, isSuccess, isLoading, isFetching} = useGetTodaysDetailsQuery({latitude, longitude, timezone, isCelsius});
+
+  const loadingElement = () => {
+    return (
+    <div className='today-details-loading'>
+      <div className='loading-circle'></div>
+    </div>
+    );
+  };
 
   useEffect(() => {
     if (isSuccess) {
@@ -32,15 +41,15 @@ export default function () {
       <h2>Current Weather Details</h2>
       <div className='current-wind'>
         <h3 className='details-titles'>Wind Status</h3>
-        <p><b className='current-detail'>{(windSpeed)}</b>km/h</p>
+        {isLoading || isFetching ? loadingElement() : <p><b className='current-detail'>{(windSpeed)}</b>km/h</p>}
         <div className='wind-direction'>
-          <FaLocationArrow className='wind-icon' style={{transform: `rotate(${windDirection}deg)`}}/>
+          <FaLocationArrow className='wind-icon' style={{transform: `rotate(${windDirection}deg)`, transition: '1s'}}/>
           <p>{getCompassDirection(windDirection)}</p>
         </div>
       </div>
       <div className='current-humidity'>
         <h3 className='details-titles'>Humidity</h3>
-        <p><b className='current-detail'>{humidity}</b>%</p>
+        {isLoading || isFetching ? loadingElement() : <p><b className='current-detail'>{humidity}</b>%</p>}
         <div className='progress-bar-container'>
           <div className='percentage-points'>
             <p>0</p>
@@ -48,18 +57,18 @@ export default function () {
             <p>100</p>
           </div>
           <div className='progress-bar'>
-            <div className='bar' style={{width: `${humidity}%`}}></div>
+            <div className='bar' style={{width: `${humidity}%`, transition: '1s'}}></div>
           </div>
           <p>%</p>
         </div>
       </div>
       <div className='current-visibility'>
         <h3 className='details-titles'>Visibility</h3>
-        <p><b className='current-detail'>{visibility >= 1 ? Math.round(visibility) : (visibility)}</b>km</p>
+        {isLoading || isFetching ? loadingElement() : <p><b className='current-detail'>{visibility >= 1 ? Math.round(visibility) : (visibility)}</b>km</p>}
       </div>
       <div className='current-apparent-temperature'>
         <h3 className='details-titles'>Apparent Temperature</h3>
-        <p><b className='current-detail'>{roundTemperature(apparentTemperature)}</b>°{getTemperatureFormat(isCelsius)}</p>
+        {isLoading || isFetching ? loadingElement() : <p><b className='current-detail'>{roundTemperature(apparentTemperature)}</b>°{getTemperatureFormat(isCelsius)}</p>}
       </div>
     </div>
     )
