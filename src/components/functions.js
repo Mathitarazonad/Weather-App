@@ -252,3 +252,10 @@ export const citiesAreNotEqual = (cities, city, stateName) => {
   return true;
 }
 
+export const compareCoords = (currentLat, currentLon, newLat, newLon) => {
+  return (
+    (Math.round((currentLat + Number.EPSILON) * 100) / 100 !== Math.round((newLat + Number.EPSILON) * 100) / 100) &&
+    (Math.round((currentLon + Number.EPSILON) * 100) / 100 !== Math.round((newLon + Number.EPSILON) * 100) / 100)
+    )
+}
+

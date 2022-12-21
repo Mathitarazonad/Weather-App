@@ -7,7 +7,7 @@ import { IoIosPin } from 'react-icons/io';
 //Bg
 import CloudBackground from '../../images/Cloud-background.png';
 //Functions
-import { citiesAreNotEqual, getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from '../functions';
+import { citiesAreNotEqual, compareCoords, getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from '../functions';
 //Hooks of RTK Query
 import { useGetTodayWeatherQuery } from '../../apis/weatherApi';
 import { useGetLocationByCoordsQuery } from '../../apis/locationsApi';
@@ -87,7 +87,7 @@ export default function TodayWeather() {
   };
 
   const updatePositionInfo = (pos) => {
-    if (Math.round(pos.coords.latitude) !== Math.round(latitude) && Math.round(pos.coords.longitude) !== Math.round(longitude)) {
+    if (compareCoords(latitude, longitude, pos.coords.latitude, pos.coords.longitude)) {
       dispatch(setCurrentCoords({
         latitude : pos.coords.latitude,
         longitude : pos.coords.longitude
