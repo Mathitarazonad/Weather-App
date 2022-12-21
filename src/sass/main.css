@@ -237,6 +237,21 @@
     gap: 3rem;
   }
 }
+@media screen and (min-width: 1000px) and (max-height: 700px) {
+  .sidebar .__images .-background {
+    width: 110%;
+  }
+  .sidebar .__information {
+    gap: 1rem;
+  }
+}
+@media (min-width: 1000px) {
+  .sidebar {
+    width: 375px;
+    position: fixed;
+    overflow: auto;
+  }
+}
 .search-menu {
   top: 0;
   bottom: 0;
@@ -403,6 +418,11 @@
     max-width: 660px;
   }
 }
+@media screen and (min-width: 1000px) {
+  .search-menu {
+    width: 375px;
+  }
+}
 .buttons-section {
   display: flex;
   flex-direction: column;
@@ -437,7 +457,7 @@
   font-weight: 600;
   background-color: hsl(244deg, 16%, 40%);
 }
-@media (min-width: 650px) {
+@media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .temperatures-container .temperature, .buttons-section .theme-btn-container .temperature {
     font-size: 2rem;
     width: 70px;
@@ -468,7 +488,7 @@
   background-color: hsl(240deg, 9%, 91%);
   color: hsl(234deg, 32%, 17%);
 }
-@media (min-width: 650px) {
+@media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .theme-btn-container {
     font-size: 2rem;
     width: 70px;
@@ -493,7 +513,7 @@
   padding: 0.6rem;
   transition: 0.5s;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .configurations-icon {
     font-size: 2rem;
     width: 70px;
@@ -517,7 +537,7 @@
   background-color: hsl(244deg, 16%, 40%);
   padding: 0.6rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .configurations-close-icon {
     font-size: 2rem;
     width: 70px;
@@ -529,7 +549,7 @@
           animation: config-open-animation 0.25s ease-out both;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 650px) and (max-width: 1000px) {
   .buttons-section {
     padding-right: 2.5rem;
     bottom: 2.5rem;
@@ -539,21 +559,26 @@
   }
 }
 .weather-section {
+  background-color: hsl(248deg, 35%, 8%);
   padding: 1.5rem;
+}
+.weather-section.open-menu {
+  display: none;
 }
 .weather-section .all-weathers {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   min-height: 100vh;
+  padding-bottom: 1.5rem;
 }
 .weather-section .weather-mode-btns-container {
   display: flex;
-  gap: 1.5rem;
   justify-content: center;
+  gap: 1.5rem;
 }
 .weather-section .weather-mode-btns-container .weather-mode-btn {
-  width: 150px;
+  flex: 1 1 43%;
   padding: 0.25rem 1rem;
   height: auto;
   background: none;
@@ -576,7 +601,8 @@
   flex-wrap: wrap;
 }
 .weather-section .weather-list-container .day-weather {
-  width: 150px;
+  flex: 1 1 43%;
+  max-width: 48%;
   background-color: hsl(234deg, 32%, 17%);
   display: flex;
   flex-direction: column;
@@ -615,8 +641,7 @@
 .weather-section .hourly-weather-container .hourly-btns-container {
   display: flex;
   width: 100%;
-  justify-content: center;
-  gap: 265px;
+  justify-content: space-between;
 }
 .weather-section .hourly-weather-container .hourly-btns-container .hourly-btn {
   background: none;
@@ -638,7 +663,8 @@
   gap: 1.5rem;
 }
 .weather-section .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
-  width: 150px;
+  flex: 1 1 43%;
+  max-width: 47.5%;
   background-color: hsl(234deg, 32%, 17%);
   display: flex;
   flex-direction: column;
@@ -655,7 +681,8 @@
 }
 
 @media screen and (min-height: 750px) {
-  .day-weather, .single-hour-weather-container {
+  .day-weather,
+.single-hour-weather-container {
     font-size: 1.2rem;
     height: 25vh;
   }
@@ -664,55 +691,32 @@
   .all-weathers .weather-list-container .day-weather {
     width: 35vw;
   }
-  .all-weathers .weather-list-container .day-weather .dates, .all-weathers .weather-list-container .day-weather .day-temperatures {
+  .all-weathers .weather-list-container .day-weather .dates,
+.all-weathers .weather-list-container .day-weather .day-temperatures {
     font-size: 1rem;
-  }
-  .all-weathers .hourly-weather-container .hourly-btns-container {
-    gap: 190px;
   }
   .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
     width: 35vw;
   }
 }
-@media screen and (min-width: 540px) {
-  .weather-section .weather-mode-btns-container {
-    gap: 2rem;
-  }
-  .weather-section .weather-mode-btns-container .weather-mode-btn {
-    width: 180px;
-  }
-  .all-weathers .weather-list-container {
-    gap: 2rem;
-  }
-  .all-weathers .weather-list-container .day-weather {
-    width: 180px;
-  }
-  .all-weathers .hourly-weather-container .hourly-btns-container {
-    gap: calc(364px - 2rem);
-  }
-  .all-weathers .hourly-weather-container .hourly-array._selected {
-    gap: 2rem;
-  }
-  .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
-    width: 180px;
-  }
-}
 @media screen and (min-width: 650px) and (max-width: 1000px) {
   .weather-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     padding: 2.5rem;
-  }
-  .weather-section .weather-mode-btns-container {
-    gap: 2rem;
   }
   .weather-section .weather-mode-btns-container .weather-mode-btn {
     font-size: 1.3rem;
     padding: 1rem;
-    width: 245px;
   }
   .weather-section .weather-list-container .day-weather {
-    width: 250px;
+    height: 25vh;
+    gap: 1.5rem;
   }
-  .weather-section .weather-list-container .day-weather .dates, .weather-section .weather-list-container .day-weather .day-image, .weather-section .weather-list-container .day-weather .day-temperatures {
+  .weather-section .weather-list-container .day-weather .dates,
+.weather-section .weather-list-container .day-weather .day-image,
+.weather-section .weather-list-container .day-weather .day-temperatures {
     font-size: 1.5rem;
   }
   .weather-section .hourly-weather-container .hourly-array._selected {
@@ -731,23 +735,89 @@
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1000px) {
-  .all-weathers {
+  .weather-section {
+    padding: 2rem 10rem;
+  }
+  .weather-section .all-weathers {
+    min-height: auto;
     gap: 2rem !important;
   }
-  .all-weathers .weather-mode-btns-container .weather-mode-btn {
-    width: 385px;
-  }
-  .all-weathers .hourly-weather-container {
+  .weather-section .all-weathers .hourly-weather-container {
     gap: 2rem;
   }
-  .all-weathers .hourly-weather-container .hourly-btns-container {
-    gap: 667px;
-  }
-  .all-weathers .hourly-weather-container .hourly-btns-container .hourly-btn {
+  .weather-section .all-weathers .hourly-weather-container .hourly-btns-container .hourly-btn {
     padding: 0;
     font-size: 1.5rem;
     width: 65px;
     height: 65px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .weather-section {
+    min-height: 100vh;
+    margin-left: 400px;
+    padding: 2rem 2.5rem;
+    position: relative;
+  }
+  .weather-section.open-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .weather-section .all-weathers {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  .weather-section .all-weathers .weather-list-container .day-weather {
+    max-height: 200px;
+  }
+  .weather-section .all-weathers .weather-list-container .day-weather .dates {
+    font-size: 0.9rem;
+  }
+  .weather-section .all-weathers .weather-list-container .day-weather .day-image img {
+    width: 50px;
+  }
+  .weather-section .all-weathers .weather-list-container .day-weather .day-temperatures {
+    font-size: 0.95rem;
+  }
+  .weather-section .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
+    max-height: 200px;
+    font-size: 1rem;
+  }
+  .weather-section .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container .hour-weather-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .weather-section {
+    padding: 2rem 3rem;
+  }
+  .weather-section .all-weathers .weather-list-container {
+    flex-wrap: nowrap;
+  }
+  .weather-section .all-weathers .weather-list-container .day-weather {
+    flex: 1 1;
+    min-height: 20vh;
+    padding: 1rem 0;
+  }
+  .weather-section .all-weathers .hourly-weather-container .hourly-btns-container {
+    justify-content: space-between;
+  }
+  .weather-section .all-weathers .hourly-weather-container .hourly-array._selected {
+    width: 100%;
+  }
+  .weather-section .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
+    flex: 1 1;
+  }
+}
+@media screen and (min-height: 950px) {
+  .weather-list-container .day-weather {
+    height: 20vh;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .weather-section {
+    padding: 1.5rem 7.5rem;
   }
 }
 .sidebar .today-weather-menu .loading {
@@ -844,6 +914,12 @@
   gap: 1rem;
   color: hsl(240deg, 9%, 91%);
 }
+@media screen and (min-width: 1000px) {
+  .today-details .current-wind {
+    padding: 1.5rem;
+    flex: 1 1 43%;
+  }
+}
 .today-details .current-wind p {
   font-size: 1.75rem;
   font-weight: 600;
@@ -874,6 +950,12 @@
   align-items: center;
   gap: 1rem;
   color: hsl(240deg, 9%, 91%);
+}
+@media screen and (min-width: 1000px) {
+  .today-details .current-humidity {
+    padding: 1.5rem;
+    flex: 1 1 43%;
+  }
 }
 .today-details .current-humidity p {
   font-size: 2rem;
@@ -915,6 +997,12 @@
   gap: 1rem;
   color: hsl(240deg, 9%, 91%);
 }
+@media screen and (min-width: 1000px) {
+  .today-details .current-visibility {
+    padding: 1.5rem;
+    flex: 1 1 43%;
+  }
+}
 .today-details .current-visibility p {
   font-size: 2rem;
   font-weight: 600;
@@ -928,6 +1016,12 @@
   gap: 1rem;
   color: hsl(240deg, 9%, 91%);
 }
+@media screen and (min-width: 1000px) {
+  .today-details .current-apparent-temperature {
+    padding: 1.5rem;
+    flex: 1 1 43%;
+  }
+}
 .today-details .current-apparent-temperature p {
   font-size: 2rem;
   font-weight: 600;
@@ -940,13 +1034,35 @@
 }
 @media screen and (min-width: 650px) {
   .today-details {
+    padding: 1.5rem 0;
     min-height: auto;
+    gap: 3rem;
+    width: 100%;
+  }
+  .today-details h2 {
+    width: 100%;
   }
   .today-details .details-titles {
     font-size: 1.1rem;
   }
   .today-details .current-humidity .progress-bar-container p {
     font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .today-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .today-details {
+    width: 100%;
+  }
+  .today-details .details-titles {
+    font-size: 0.95rem;
   }
 }
 footer {
@@ -961,6 +1077,15 @@ footer a {
   letter-spacing: 0.5px;
 }
 
+@media screen and (min-height: 830px) and (min-width: 1200px) {
+  footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 1rem;
+    text-align: center;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -969,12 +1094,6 @@ footer a {
   -moz-box-sizing: border-box;
 }
 
-.weather-section {
+.main-container {
   background-color: hsl(248deg, 35%, 8%);
-}
-.weather-section img {
-  width: 10px;
-}
-.weather-section.open-menu {
-  display: none;
 }/*# sourceMappingURL=main.css.map */

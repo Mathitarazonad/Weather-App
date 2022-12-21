@@ -140,6 +140,7 @@
     }
   }
 
+  //Cities results
   .locations-options-searching {
     display: flex;
     flex-direction: column;
@@ -170,3 +171,10 @@
     max-width: 660px;
   }
 }
+
+@media screen and (min-width:1000px) {
+  .search-menu {
+    width: 375px;
+  }
+}
+

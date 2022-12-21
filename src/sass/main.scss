@@ -16,15 +16,6 @@
   -moz-box-sizing: border-box;
 }
 
-//This is just for the moment
-.weather-section {
+.main-container {
   background-color: $Dark-weather-bg;
-  img {
-    width: 10px;
-  }
-
-  &.open-menu {
-    display: none;
-  }
 }
-

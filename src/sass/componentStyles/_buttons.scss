@@ -54,7 +54,7 @@
 
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 650px) and (max-width: 1000px){
   .buttons-section {
     padding-right: $Tablet-padding;
     bottom: $Tablet-padding;

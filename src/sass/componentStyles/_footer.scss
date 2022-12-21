@@ -12,3 +12,14 @@ footer {
     letter-spacing: .5px;
   }
 }
+
+@media screen and (min-height: 830px) and (min-width: 1200px){
+  footer {
+    position: absolute;
+    width: calc(100%);
+    left: 0;
+    bottom: 1rem;
+    text-align: center;
+  }
+
+}

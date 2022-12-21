@@ -224,3 +224,25 @@
   }
   
 }
+
+@media screen and (min-width: 1000px) and (max-height: 700px) {
+  .sidebar {
+    .__images {
+      .-background {
+        width: 110%;
+      }
+    }
+
+    .__information {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1000px){
+  .sidebar {
+    width: 375px;
+    position: fixed;
+    overflow: auto;
+  }
+}

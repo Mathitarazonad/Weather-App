@@ -120,7 +120,15 @@
 
 @media screen and (min-width: 650px) {
   .today-details {
+    padding: 1.5rem 0;
     min-height: auto;
+    gap: 3rem;
+    width: 100%;
+
+    h2 {
+      width: 100%;
+    }
+
     .details-titles {
       font-size: 1.1rem;
     }
@@ -131,4 +139,24 @@
       }
     }
   }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .today-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .today-details {
+    width: 100%;
+    .details-titles {
+      font-size: .95rem;
+    }
+  }
+
 }
