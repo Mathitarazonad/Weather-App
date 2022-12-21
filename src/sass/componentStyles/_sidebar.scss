@@ -6,7 +6,7 @@
   padding-bottom: 1rem;
 
   .__locations-btns {
-    padding: 1rem;
+    padding: $Mobile-padding;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,15 +130,16 @@
   .sidebar {
     .__images {
       .-background {
-        width: 140%;
+        width: 130%;
       }
       .current-weather {
         height: 120px;
-        margin-top: -10rem;
+        margin-top: -15rem;
       }
     }
 
     .__information {
+      margin-top: -2.5rem;
       .current-temperature {
         align-items: center;
         :first-child {
