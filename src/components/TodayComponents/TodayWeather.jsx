@@ -6,6 +6,7 @@ import { BsFillRecordFill } from 'react-icons/bs';
 import { IoIosPin } from 'react-icons/io';
 //Bg
 import CloudBackground from '../../images/Cloud-background.png';
+import LightBackground from '../../images/Light-background.png';
 //Functions
 import { citiesAreNotEqual, compareCoords, getDates, getTemperatureFormat, getWeatherCodeName, getWeatherImg, roundTemperature } from '../functions';
 //Hooks of RTK Query
@@ -29,6 +30,7 @@ export default function TodayWeather() {
   const {isCelsius} = useSelector(store => store.temperature);
   const {currentTemperature} = useSelector(store => store.weather.todayWeather.temperatures);
   const {weatherCode} = useSelector(store => store.weather.todayWeather);
+  const {isDarkMode} = useSelector(store => store.theme);
 
   //RTK Query endpoints calls
   const {data: weatherInfo, isSuccess: successWeather, isFetching: fetchingWeather} = useGetTodayWeatherQuery({latitude,longitude,isCelsius,timezone}, {
@@ -106,7 +108,7 @@ export default function TodayWeather() {
         </button>
       </div>
       {successWeather ? <> <div className='__images'>
-        <img src={CloudBackground} alt='cloudBackground' className='-background'/>
+        <img src={isDarkMode ? CloudBackground : LightBackground} alt='cloudBackground' className='-background'/>
         {fetchingWeather || fetchingLocation ? <div className='loading-today-weather'></div> :<img src={getWeatherImg(weatherCode, hour)} alt='-currentWeather' className='current-weather'/>}
       </div>
       <div className='__information'>
