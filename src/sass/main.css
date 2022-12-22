@@ -67,7 +67,7 @@
   padding-bottom: 1rem;
 }
 .sidebar .__locations-btns {
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,6 +113,7 @@
   height: 135px;
 }
 .sidebar .__information {
+  margin-top: -2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -171,11 +172,14 @@
 
 @media screen and (max-height: 825px) {
   .sidebar .__images .-background {
-    width: 140%;
+    width: 130%;
   }
   .sidebar .__images .current-weather {
     height: 120px;
     margin-top: -10rem;
+  }
+  .sidebar .__information {
+    margin-top: -0.5rem;
   }
   .sidebar .__information .current-temperature {
     align-items: center;
@@ -246,6 +250,9 @@
   .sidebar .__images .-background {
     width: 110%;
   }
+  .sidebar .__images .current-weather {
+    height: 105px;
+  }
   .sidebar .__information {
     gap: 1rem;
   }
@@ -257,14 +264,11 @@
     overflow: auto;
   }
 }
-@media (min-width: 1400px) {
-  .sidebar, .search-menu {
-    width: 425px;
-  }
-  .sidebar .__information, .search-menu .__information {
+@media screen and (min-height: 900px) {
+  .sidebar .__information {
     gap: 3rem;
   }
-  .sidebar .__information .-current-details, .search-menu .__information .-current-details {
+  .sidebar .__information .-current-details {
     gap: 4rem;
   }
 }
@@ -314,7 +318,6 @@
   color: hsl(243deg, 10%, 66%);
   outline: none;
   letter-spacing: 0.5px;
-  font-size: 1rem;
 }
 .search-menu .search-form .input input::-moz-placeholder {
   font-size: 1rem;
@@ -616,8 +619,9 @@
   flex-wrap: wrap;
 }
 .weather-section .weather-list-container .day-weather {
+  font-size: 1rem;
   flex: 1 1 43%;
-  max-width: 48%;
+  max-width: 46.25%;
   background-color: hsl(234deg, 32%, 17%);
   display: flex;
   flex-direction: column;
@@ -627,7 +631,7 @@
   gap: 1rem;
 }
 .weather-section .weather-list-container .day-weather .dates {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   display: flex;
   color: hsl(240deg, 9%, 91%);
 }
@@ -638,7 +642,7 @@
   display: flex;
   flex-direction: row-reverse;
   gap: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 .weather-section .weather-list-container .day-weather .day-temperatures :first-child {
   color: hsl(243deg, 10%, 66%);
@@ -688,7 +692,7 @@
   padding: 1rem;
   gap: 1rem;
   color: hsl(240deg, 9%, 91%);
-  font-size: 1.125rem;
+  font-size: 1.125em;
 }
 .weather-section .hourly-weather-container .hourly-array._selected .single-hour-weather-container .hour-weather-img {
   width: 60px;
@@ -698,7 +702,7 @@
 @media screen and (min-height: 750px) {
   .day-weather,
 .single-hour-weather-container {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     height: 25vh;
   }
 }
@@ -708,7 +712,7 @@
   }
   .all-weathers .weather-list-container .day-weather .dates,
 .all-weathers .weather-list-container .day-weather .day-temperatures {
-    font-size: 1rem;
+    font-size: 1em;
   }
   .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
     width: 35vw;
@@ -721,25 +725,30 @@
     flex-direction: column;
     padding: 2.5rem;
   }
-  .weather-section .weather-mode-btns-container .weather-mode-btn {
+  .weather-section .weather-mode-btns-container {
     font-size: 1.3rem;
+  }
+  .weather-section .weather-mode-btns-container .weather-mode-btn {
+    font-size: 1.3em;
     padding: 1rem;
   }
   .weather-section .weather-list-container .day-weather {
+    font-size: 1.2rem;
     height: 25vh;
     gap: 1.5rem;
+    max-width: 48%;
   }
   .weather-section .weather-list-container .day-weather .dates,
 .weather-section .weather-list-container .day-weather .day-image,
 .weather-section .weather-list-container .day-weather .day-temperatures {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
   .weather-section .hourly-weather-container .hourly-array._selected {
     gap: 1.5rem;
   }
   .weather-section .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
     width: 250px;
-    font-size: 1.5rem;
+    font-size: 2em;
   }
   .weather-section .hourly-weather-container .hourly-btns-container {
     gap: 443px;
@@ -762,7 +771,7 @@
   }
   .weather-section .all-weathers .hourly-weather-container .hourly-btns-container .hourly-btn {
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     width: 65px;
     height: 65px;
   }
@@ -770,7 +779,7 @@
 @media screen and (min-width: 1000px) {
   .weather-section {
     min-height: 100vh;
-    margin-left: 400px;
+    margin-left: 375px;
     padding: 2rem 2.5rem;
     position: relative;
   }
@@ -783,19 +792,19 @@
     padding-bottom: 2rem;
   }
   .weather-section .all-weathers .weather-list-container .day-weather {
-    max-height: 200px;
+    max-height: 160px;
   }
   .weather-section .all-weathers .weather-list-container .day-weather .dates {
-    font-size: 0.9rem;
+    font-size: 0.9em;
   }
   .weather-section .all-weathers .weather-list-container .day-weather .day-image img {
     width: 50px;
   }
   .weather-section .all-weathers .weather-list-container .day-weather .day-temperatures {
-    font-size: 0.95rem;
+    font-size: 0.95em;
   }
   .weather-section .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container {
-    max-height: 200px;
+    max-height: 160px;
     font-size: 1rem;
   }
   .weather-section .all-weathers .hourly-weather-container .hourly-array._selected .single-hour-weather-container .hour-weather-img {
@@ -805,7 +814,7 @@
 }
 @media screen and (min-width: 1150px) {
   .weather-section {
-    padding: 2rem 3rem;
+    padding: 2rem 7.5rem;
   }
   .weather-section .all-weathers .weather-list-container {
     flex-wrap: nowrap;
@@ -838,10 +847,14 @@
 @media screen and (min-width: 1400px) {
   .weather-section {
     padding: 2rem 10.5rem;
-    margin-left: 425px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .weather-section {
+    padding: 2rem 13rem;
   }
 }
 .sidebar .today-weather-menu .loading {
@@ -928,7 +941,7 @@
   border-bottom-color: hsl(243deg, 10%, 66%);
   -webkit-animation: spinner 0.75s infinite both;
           animation: spinner 0.75s infinite both;
-  margin-top: -8rem;
+  margin-top: -13rem;
 }
 
 .today-details {
@@ -1142,4 +1155,77 @@ footer a {
 
 .main-container {
   background-color: hsl(248deg, 35%, 8%);
+}
+
+.App.light-mode .sidebar {
+  transition: 0.5s;
+  background-color: #5A62AD;
+}
+.App.light-mode .sidebar .search-menu {
+  background-color: #5A62AD;
+  transition: 0.5s;
+}
+.App.light-mode .sidebar .search-menu .search-btn {
+  background-color: rgb(92, 70, 121);
+}
+.App.light-mode .sidebar .search-menu .close-icon {
+  color: white;
+  transition: 0.5s;
+}
+.App.light-mode .sidebar .search-menu .input {
+  border-color: white;
+  transition: 0.5s;
+}
+.App.light-mode .sidebar .search-menu .location-option {
+  border-color: white;
+}
+.App.light-mode .__information .current-temperature p {
+  color: white;
+}
+.App.light-mode .__information h2 {
+  color: hsl(240deg, 9%, 91%);
+  font-weight: 700;
+}
+.App.light-mode .__information .-current-details {
+  color: hsl(240deg, 9%, 91%);
+}
+.App.light-mode .weather-section {
+  background-color: #BCC0E6;
+  transition: 0.5s;
+}
+.App.light-mode .weather-section .day-weather {
+  background-color: #5A62AD;
+  transition: 0.5s;
+}
+.App.light-mode .weather-section .day-weather .dates {
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: 0.5s;
+}
+.App.light-mode .weather-section .day-weather .day-temperatures :last-child {
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.App.light-mode .weather-section .day-weather .day-temperatures :first-child {
+  color: hsl(240deg, 9%, 91%);
+  transition: 0.5s;
+}
+.App.light-mode .weather-section .hourly-btns-container .hourly-btn {
+  background-color: #5A62AD;
+  transition: 0.5s;
+  color: white;
+}
+.App.light-mode .weather-section .hourly-array._selected .single-hour-weather-container {
+  background-color: #5A62AD;
+  transition: 0.5s;
+}
+.App.light-mode .weather-section .current-wind, .App.light-mode .weather-section .current-humidity, .App.light-mode .weather-section .current-visibility, .App.light-mode .weather-section .current-apparent-temperature {
+  background-color: #5A62AD;
+  transition: 0.5s;
+}
+.App.light-mode .buttons-section .theme-btn-container {
+  background-color: hsl(244deg, 16%, 40%);
+  color: white;
 }/*# sourceMappingURL=main.css.map */

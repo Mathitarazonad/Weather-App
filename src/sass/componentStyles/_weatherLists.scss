@@ -35,7 +35,7 @@
     .day-weather {
       font-size: 1rem;
       flex: 1 1 43%;
-      max-width: 48%;
+      max-width: 46.25%;
       background-color: $Dark-sidebar-bg;
       display: flex;
       flex-direction: column;
@@ -179,6 +179,7 @@
         font-size: 1.2rem;
         height: 25vh;
         gap: 1.5rem;
+        max-width: 48%;
         .dates,
         .day-image,
         .day-temperatures {
@@ -233,7 +234,7 @@
 @media screen and (min-width: 1000px) {
   .weather-section {
     min-height: 100vh;
-    margin-left: 400px;
+    margin-left: 375px;
     padding: 2rem 2.5rem;
     position: relative;
     
@@ -248,7 +249,7 @@
 
       .weather-list-container {
         .day-weather {
-          max-height: 200px;
+          max-height: 160px;
           .dates {
             font-size: .9em;
           }
@@ -265,7 +266,7 @@
         .hourly-array._selected {
           .single-hour-weather-container {
 
-            max-height: 200px;
+            max-height: 160px;
             font-size: 1rem;
 
             .hour-weather-img {
@@ -282,7 +283,7 @@
 
 @media screen and (min-width: 1150px) {
   .weather-section {
-    padding: 2rem 3rem;
+    padding: 2rem 7.5rem;
 
     .all-weathers {
       .weather-list-container {
@@ -329,9 +330,15 @@
 @media screen and (min-width: 1400px) {
   .weather-section {
     padding: 2rem 10.5rem;
-    margin-left: 425px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+}
+
+@media screen and (min-width: 1700px) {
+  .weather-section {
+    padding: 2rem 13rem;
+  }
+  
 }

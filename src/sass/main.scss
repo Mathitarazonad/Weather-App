@@ -19,3 +19,114 @@
 .main-container {
   background-color: $Dark-weather-bg;
 }
+
+//Light mode 
+.App.light-mode {
+  .sidebar {
+    transition: .5s;
+    background-color: $Light-sidebar-bg;
+
+    .search-menu {
+      background-color: $Light-sidebar-bg;
+      transition: .5s;
+
+      .search-btn {
+        background-color: rgb(92, 70, 121);
+      }
+      
+      .close-icon {
+        color: $Light-text;
+        transition: .5s;
+      }
+
+      .input {
+        border-color: $Light-text;
+        transition: .5s;
+      }
+
+      .location-option {
+        border-color: $Light-text;
+        }
+      }
+    }
+
+    .__information {
+      .current-temperature {
+        p {
+          color: $Light-text;
+        }
+      }
+
+      h2 {
+        color: $Light-second-text;
+        font-weight: 700;
+      }
+
+      .-current-details {
+        color: $Light-second-text;
+      }
+    }
+
+    
+  .weather-section {
+    background-color: $Light-weather-bg;
+    transition: .5s;
+
+    .day-weather {
+      background-color: $Light-sidebar-bg;
+      transition: .5s;
+      
+      .dates {
+        color: $Light-text;
+        font-weight: 500;
+        letter-spacing: .5px;
+        transition: .5s;
+      }
+
+      .day-temperatures {
+        :last-child {
+          color: $Light-text;
+          font-weight: 600;
+          transition: .5s;
+        }
+        :first-child {
+          color: $Light-second-text;
+          transition: .5s;
+        }
+      }
+
+    }
+
+
+
+    .hourly-btns-container {
+      .hourly-btn {
+        background-color: $Light-sidebar-bg;
+        transition: .5s;
+        color: $Light-text
+      }
+    }
+
+    .hourly-array._selected {
+      .single-hour-weather-container {
+        background-color: $Light-sidebar-bg;
+        transition: .5s;
+      }
+    }
+
+
+    .current-wind, .current-humidity, .current-visibility, .current-apparent-temperature {
+      background-color: $Light-sidebar-bg;
+      transition: .5s;
+    }
+  }
+
+  .buttons-section{
+    .theme-btn-container {
+    background-color: $Changer-btns;
+    color: $Light-text;
+    } 
+  }
+}
+
+

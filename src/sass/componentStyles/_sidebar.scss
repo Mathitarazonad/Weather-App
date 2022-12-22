@@ -59,6 +59,7 @@
   }
 
   .__information {
+    margin-top: -2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -134,12 +135,12 @@
       }
       .current-weather {
         height: 120px;
-        margin-top: -15rem;
+        margin-top: -10rem;
       }
     }
 
     .__information {
-      margin-top: -2.5rem;
+      margin-top: -.5rem;
       .current-temperature {
         align-items: center;
         :first-child {
@@ -237,6 +238,9 @@
       .-background {
         width: 110%;
       }
+      .current-weather {
+        height: 105px;
+      }
     }
 
     .__information {
@@ -253,10 +257,8 @@
   }
 }
 
-@media (min-width: 1400px) {
-  .sidebar, .search-menu {
-    width: 425px;
-
+@media screen and (min-height: 900px) {
+  .sidebar {
     .__information {
       gap: 3rem;
       .-current-details {
