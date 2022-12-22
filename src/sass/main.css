@@ -1158,23 +1158,19 @@ footer a {
 }
 
 .App.light-mode .sidebar {
-  transition: 0.5s;
   background-color: #5A62AD;
 }
 .App.light-mode .sidebar .search-menu {
   background-color: #5A62AD;
-  transition: 0.5s;
 }
 .App.light-mode .sidebar .search-menu .search-btn {
   background-color: rgb(92, 70, 121);
 }
 .App.light-mode .sidebar .search-menu .close-icon {
   color: white;
-  transition: 0.5s;
 }
 .App.light-mode .sidebar .search-menu .input {
   border-color: white;
-  transition: 0.5s;
 }
 .App.light-mode .sidebar .search-menu .location-option {
   border-color: white;
@@ -1191,39 +1187,31 @@ footer a {
 }
 .App.light-mode .weather-section {
   background-color: #BCC0E6;
-  transition: 0.5s;
 }
 .App.light-mode .weather-section .day-weather {
   background-color: #5A62AD;
-  transition: 0.5s;
 }
 .App.light-mode .weather-section .day-weather .dates {
   color: white;
   font-weight: 500;
   letter-spacing: 0.5px;
-  transition: 0.5s;
 }
 .App.light-mode .weather-section .day-weather .day-temperatures :last-child {
   color: white;
   font-weight: 600;
-  transition: 0.5s;
 }
 .App.light-mode .weather-section .day-weather .day-temperatures :first-child {
   color: hsl(240deg, 9%, 91%);
-  transition: 0.5s;
 }
 .App.light-mode .weather-section .hourly-btns-container .hourly-btn {
   background-color: #5A62AD;
-  transition: 0.5s;
   color: white;
 }
 .App.light-mode .weather-section .hourly-array._selected .single-hour-weather-container {
   background-color: #5A62AD;
-  transition: 0.5s;
 }
 .App.light-mode .weather-section .current-wind, .App.light-mode .weather-section .current-humidity, .App.light-mode .weather-section .current-visibility, .App.light-mode .weather-section .current-apparent-temperature {
   background-color: #5A62AD;
-  transition: 0.5s;
 }
 .App.light-mode .buttons-section .theme-btn-container {
   background-color: hsl(244deg, 16%, 40%);
