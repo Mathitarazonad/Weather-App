@@ -35,7 +35,6 @@ export default function () {
     }
   }, [todayDetailsData]);
 
-  if (isSuccess) {
     return (
     <div className='today-details'>
       <h2>Current Weather Details</h2>
@@ -43,7 +42,7 @@ export default function () {
         <h3 className='details-titles'>Wind Status</h3>
         {isLoading || isFetching ? loadingElement() : <p><b className='current-detail'>{(windSpeed)}</b>km/h</p>}
         <div className='wind-direction'>
-          <FaLocationArrow className='wind-icon' style={{transform: `rotate(${windDirection}deg)`, transition: '1s'}}/>
+          <FaLocationArrow className='wind-icon' style={{transform: `rotate(${windDirection}deg)`, transition: '1.5s'}}/>
           <p>{getCompassDirection(windDirection)}</p>
         </div>
       </div>
@@ -72,5 +71,5 @@ export default function () {
       </div>
     </div>
     )
-  }
+  
 }
