@@ -4,9 +4,8 @@ import { setCurrentLocationInfo, setSearchedCitiesOptions, setIfSearchingCities,
 import { setIfMenuOpen } from '../../store/menuSlice.js';
 import { citiesAreNotEqual } from '../functions.js'
 
-export default function LocationsOptionsSearching({isLoading}) {
+export default function LocationsOptionsSearching({isLoading, cities}) {
   const dispatch = useDispatch();
-  const cities = useSelector(store => store.locations.citiesOptions);
   const citiesSaved = useSelector(store => store.locations.searchedCitiesOptions)
 
   const handleClick = cityOption => {
@@ -28,6 +27,10 @@ export default function LocationsOptionsSearching({isLoading}) {
       <p>Searching for cities...</p>
     </div>
     )
+  }
+
+  else if (cities.length === 0) {
+    return <div className='no-cities-found'>No cities found</div>
   }
 
   return (

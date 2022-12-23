@@ -474,6 +474,12 @@
 .search-menu .locations-options-searching .searching-option .-info p {
   color: hsl(243deg, 10%, 66%);
 }
+.search-menu .no-cities-found {
+  margin-top: 3rem;
+  text-align: center;
+  color: hsl(243deg, 10%, 66%);
+  font-size: 2rem;
+}
 
 @media screen and (min-width: 650px) and (max-width: 1000px) {
   .search-menu {

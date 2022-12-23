@@ -192,6 +192,14 @@
       }
     }
   }
+
+  //When no cities found
+  .no-cities-found {
+    margin-top: 3rem;
+    text-align: center;
+    color: $Dark-second-text-color;
+    font-size: 2rem
+  }
 }
 
 @media screen and (min-width: 650px) and (max-width: 1000px){
