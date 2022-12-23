@@ -91,6 +91,13 @@
   border-radius: 50%;
   border-bottom-color: $Dark-second-text-color;
   animation: spinner 0.75s infinite both;
-  margin-top: -13rem;
+  margin-top: -10rem;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .loading-today-weather {
+    width: 70px;
+    height: 70px;
+  }
 }
 

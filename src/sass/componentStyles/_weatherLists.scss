@@ -92,6 +92,12 @@
         justify-content: center;
         align-items: center;
         padding: 0.5rem;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: rgba(185, 171, 171, 0.719);
+          transition: .5s;
+        }
       }
     }
 
@@ -126,15 +132,6 @@
     }
   }
 }
-
-@media screen and (min-height: 750px) {
-  .day-weather,
-  .single-hour-weather-container {
-    font-size: 1.2em;
-    height: 25vh;
-  }
-}
-
 @media screen and (max-width: 374px) {
   .all-weathers {
     .weather-list-container {
@@ -158,13 +155,12 @@
   }
 }
 
-
 @media screen and (min-width: 650px) and (max-width: 1000px) {
   .weather-section {
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: $Tablet-padding;
+    padding: $Tablet-padding 7.5rem;
 
     .weather-mode-btns-container {
       font-size: 1.3rem;
@@ -177,7 +173,7 @@
     .weather-list-container {
       .day-weather {
         font-size: 1.2rem;
-        height: 25vh;
+        min-height: 25vh;
         gap: 1.5rem;
         max-width: 48%;
         .dates,
@@ -250,6 +246,9 @@
       .weather-list-container {
         .day-weather {
           max-height: 160px;
+          flex: 1 1 10%;
+          max-width: 16.5%;
+          font-size: .95rem;
           .dates {
             font-size: .9em;
           }
@@ -257,6 +256,7 @@
             width: 50px;
           }
           .day-temperatures {
+            gap: .5rem;
             font-size: .95em;
           }
         }
@@ -264,10 +264,12 @@
 
       .hourly-weather-container {
         .hourly-array._selected {
+          width: 100%;
           .single-hour-weather-container {
-
+            flex: 1 1 15%;
+            max-width: 25%;
             max-height: 160px;
-            font-size: 1rem;
+            font-size: .9rem;
 
             .hour-weather-img {
               width: 50px;
@@ -286,11 +288,15 @@
     padding: 2rem 7.5rem;
 
     .all-weathers {
+      .weather-mode-btns-container {
+        .weather-mode-btn {
+          padding: 1rem;
+        }
+      }
       .weather-list-container {
         flex-wrap: nowrap;
         .day-weather {
-          flex: 1 1;
-          min-height: 20vh;
+          max-width: none;
           padding: 1rem 0;
         }
       }
@@ -299,26 +305,10 @@
         .hourly-btns-container {
           justify-content: space-between;
         }
-        .hourly-array._selected {
-          width: 100%;
-          .single-hour-weather-container {
-            flex: 1 1;
-          }
-        }
       }
 
     }
-  }
-
-  
-}
-
-@media screen and (min-height: 950px) {
-  .weather-list-container {
-    .day-weather {
-      height: 20vh;
-    }
-  }
+  } 
 }
 
 @media screen and (min-width: 1300px) {
@@ -337,8 +327,21 @@
 }
 
 @media screen and (min-width: 1700px) {
+  .sidebar, .search-menu {
+    width: 450px;
+  }
   .weather-section {
+    margin-left: 450px;
     padding: 2rem 13rem;
   }
   
 }
+
+@media screen and (min-height: 750px) {
+  .day-weather,
+  .single-hour-weather-container {
+    font-size: 1.2em;
+    height: 25vh;
+  }
+}
+

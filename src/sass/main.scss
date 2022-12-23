@@ -95,13 +95,15 @@
 
     }
 
-
-
     .hourly-btns-container {
       .hourly-btn {
         background-color: $Light-sidebar-bg;
-  
-        color: $Light-text
+        color: $Light-text;
+
+        &:hover {
+          background-color: rgba(185, 171, 171, 0.719);
+          transition: .5s;
+        }
       }
     }
 
@@ -121,9 +123,18 @@
 
   .buttons-section{
     .theme-btn-container {
-    background-color: $Changer-btns;
-    color: $Light-text;
+      background-color: $Changer-btns;
+      color: $Light-text;
+      
+      &:hover {
+        background-color: rgb(185, 171, 171);
+        transition: .5s;
+      }
     } 
+  }
+
+  footer {
+    color: $Light-text;
   }
 }
 

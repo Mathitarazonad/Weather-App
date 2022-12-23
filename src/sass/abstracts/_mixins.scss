@@ -8,6 +8,12 @@
   gap: 1rem;
   border: 1px solid $Dark-second-text-color;
   border-radius: 1px;
+  cursor: pointer;
+      
+  &:hover {
+    transform: scale(1.05);
+    transition: .5s;
+  }
 }
 
 @mixin buttons () {
@@ -25,6 +31,12 @@
   font-size: 1.5rem;
   font-weight: 600;
   background-color: $Changer-btns;
+  cursor: pointer;
+      
+  &:hover {
+    background-color: rgba(185, 171, 171, 0.719);
+    transition: .5s;
+  }
 
   @media (min-width:650px) and (max-width: 1000px){
     font-size: 2rem;
@@ -45,6 +57,12 @@
   transition: .5s;
   font-weight: 600;
   letter-spacing: 1px;
+  cursor: pointer;
+      
+  &:hover {
+    background-color: rgb(185, 171, 171);
+    transition: .5s;
+  }
 
   &.selected {
     background-color: $Dark-bg-btn;
