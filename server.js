@@ -6,6 +6,7 @@ dotenv.config();
 
 const app = express();
 const geoapifyKey = process.env.GEOAPIFY_API_KEY;
+const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 
@@ -51,6 +52,4 @@ app.get('cities', (req, res) => {
   axios.get(`https://api.geoapify.com/v1/geocode/search?text=${cityName}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data));
 });
 
-app.listen(8000, () => {
-  console.log('Servidor escuchando en puerto 8000');
-});
+app.listen(8000);
