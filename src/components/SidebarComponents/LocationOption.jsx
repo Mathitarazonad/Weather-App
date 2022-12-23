@@ -32,10 +32,10 @@ export default function LocationOption({city}) {
           <p>{city.city}</p>
           <p>{city.stateName}</p>
         </div>
-        <img src={`https://flagcdn.com/48x36/${city.country}.png`} className='location-flag' alt={`${city.country}Flag`}/>
+        <img onClick={() => handleClick()} src={`https://flagcdn.com/48x36/${city.country}.png`} className='location-flag' alt={`${city.country}Flag`}/>
       </div>
       <div className='-btns-container'>
-        <button className='location-btn' id='location-select-btn'><AiOutlineRight /></button>
+        <button className='location-btn' id='location-select-btn' onClick={() => handleClick()}><AiOutlineRight /></button>
         <button className='location-btn' id='location-delete-btn' onClick={() => handleDelete(city.city)}><AiOutlineClose /></button>
       </div>
     </div>
