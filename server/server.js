@@ -10,6 +10,10 @@ const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Successful')
+})
+
 app.get('/city', (req, res) => {
   const city = req.query.city;
   axios.get(`https://api.geoapify.com/v1/geocode/search?text=${city}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`,
