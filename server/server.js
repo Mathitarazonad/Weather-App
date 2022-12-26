@@ -52,4 +52,6 @@ app.get('/cities', (req, res) => {
   axios.get(`https://api.geoapify.com/v1/geocode/search?text=${cityName}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data));
 });
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`)
+});
