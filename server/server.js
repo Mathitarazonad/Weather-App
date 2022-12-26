@@ -47,9 +47,12 @@ app.get('/todaysDetails', (req, res) => {
   axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=relativehumidity_2m,apparent_temperature,visibility,windspeed_10m,winddirection_10m&timezone=${timezone}&temperature_unit=${temperature}&current_weather=true&windspeed_unit=mph`).then(resp => res.json(resp.data));
 })
 
-app.get('cities', (req, res) => {
+app.get('/cities', (req, res) => {
   const cityName = req.query.city;
   axios.get(`https://api.geoapify.com/v1/geocode/search?text=${cityName}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data));
 });
 
+
+
+app.use(express.static('build'))
 app.listen(8000);
