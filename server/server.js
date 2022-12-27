@@ -21,7 +21,14 @@ app.get('/', (req, res) => {
 
 app.get('/city', (req, res) => {
   const city = req.query.city;
-  axios.get(`https://api.geoapify.com/v1/geocode/search?text=${city}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`)
+  axios.get(`https://api.geoapify.com/v1/geocode/search?text=${city}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`, {
+    headers: {
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Origin': '*' ,
+          'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT' ,
+          'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization' 
+    }
+  })
   .then((resp) => res.json(resp.data));
 });
 
@@ -38,7 +45,14 @@ app.get('/today', (req, res) => {
 
 app.get('/coords', (req, res) => {
   const [latitude, longitude] = [req.query.latitude, req.query.longitude];
-  axios.get(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data));
+  axios.get(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&type=city&apiKey=${geoapifyKey}`, {
+    headers: {
+          'Access-Control-Allow-Credentials': 'true',
+          'Access-Control-Allow-Origin': '*' ,
+          'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT' ,
+          'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization' 
+    }
+  }).then(resp => res.json(resp.data));
 })
 
 app.get('/hourly', (req, res) => {
