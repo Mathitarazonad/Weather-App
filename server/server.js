@@ -8,16 +8,7 @@ const app = express();
 const geoapifyKey = process.env.GEOAPIFY_API_KEY;
 const PORT = process.env.PORT || 8000;
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-  credentials: true
-}))
-
-app.get('/', (req, res) => {
-  res.send('Successful')
-})
+app.use(cors());
 
 app.get('/city', (req, res) => {
   const city = req.query.city;

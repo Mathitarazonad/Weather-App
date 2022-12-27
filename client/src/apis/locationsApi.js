@@ -2,7 +2,7 @@ import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
 export const locationsAPI = createApi({
   reducerPath : 'locationsAPI',
-  baseQuery : fetchBaseQuery({baseUrl: 'http://localhost:8000'}),
+  baseQuery : fetchBaseQuery({baseUrl: 'https://weather-app-fikm.onrender.com'}),
   endpoints : builder => ({
     getLocationByCity : builder.query({
       query : (city) => `/city?city=${city}`
@@ -13,4 +13,4 @@ export const locationsAPI = createApi({
   })
 });
 
-export const { useGetLocationByCityQuery, useGetCurrentLocationQuery, useGetLocationByCoordsQuery } = locationsAPI;
+export const { useGetLocationByCityQuery, useGetLocationByCoordsQuery } = locationsAPI;
