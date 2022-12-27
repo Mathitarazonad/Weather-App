@@ -16,13 +16,8 @@ app.get('/', (req, res) => {
 
 app.get('/city', (req, res) => {
   const city = req.query.city;
-  axios.get(`https://api.geoapify.com/v1/geocode/search?text=${city}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`,
-      {
-        headers: {
-          'X-Api-Key': process.env.API_NINJA_KEY,
-        },
-      }
-    ).then((resp) => res.json(resp.data));
+  axios.get(`https://api.geoapify.com/v1/geocode/search?text=${city}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`)
+  .then((resp) => res.json(resp.data));
 });
 
 app.get('/today', (req, res) => {
@@ -50,11 +45,6 @@ app.get('/todaysDetails', (req, res) => {
   const [latitude, longitude, timezone, temperature] = [req.query.latitude, req.query.longitude, req.query.timezone, req.query.temperature];
   axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=relativehumidity_2m,apparent_temperature,visibility,windspeed_10m,winddirection_10m&timezone=${timezone}&temperature_unit=${temperature}&current_weather=true&windspeed_unit=mph`).then(resp => res.json(resp.data));
 })
-
-app.get('/cities', (req, res) => {
-  const cityName = req.query.city;
-  axios.get(`https://api.geoapify.com/v1/geocode/search?text=${cityName}&lang=en&limit=10&type=city&apiKey=${geoapifyKey}`).then(resp => res.json(resp.data));
-});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`)
