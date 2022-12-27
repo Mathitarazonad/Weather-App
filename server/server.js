@@ -43,6 +43,8 @@ app.get('/todaysDetails', (req, res) => {
   axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=relativehumidity_2m,apparent_temperature,visibility,windspeed_10m,winddirection_10m&timezone=${timezone}&temperature_unit=${temperature}&current_weather=true&windspeed_unit=mph`).then(resp => res.json(resp.data));
 })
 
+app.use(express.static('./build'));
+
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`)
 });
