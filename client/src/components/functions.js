@@ -15,7 +15,7 @@ import Thunderstorm from '../images/Thunderstorm.png';
 import ThunderHail from '../images/Thunder-hail.png'
 import Snow from '../images/Snow.png';
 import Sleet from '../images/Sleet.png';
-import Fog from '../images/Fog.png';
+import Fog from '../images/fog.png';
 
 //
 import { chunk } from 'lodash';
