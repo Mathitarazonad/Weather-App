@@ -64,7 +64,7 @@ export default function TodayWeather() {
         stateName,
       }));
 
-      if(citiesAreNotEqual(searchedCitiesOptions, city, stateName)) {
+      if(citiesAreNotEqual(searchedCitiesOptions, city, stateName, lat, lon)) {
         dispatch(setSearchedCitiesOptions({
           city,
           country : country_code,

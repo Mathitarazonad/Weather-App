@@ -11,7 +11,7 @@ export default function LocationsOptionsSearching({isLoading, cities}) {
   const handleClick = cityOption => {
     let {city, country_code, lat, lon, timezone, state} = cityOption;
     city = city ? city : state;
-    if (citiesAreNotEqual(citiesSaved, city, state)) {
+    if (citiesAreNotEqual(citiesSaved, city, state, lat, lon)) {
       dispatch(setCurrentLocationInfo({city: city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
       dispatch(setSearchedCitiesOptions({city:  city ? city : state, country: country_code, latitude: lat, longitude: lon, timezone : timezone.name, stateName : state}));
       dispatch(setIfSearchingCities(false));

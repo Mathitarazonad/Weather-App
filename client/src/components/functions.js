@@ -243,9 +243,9 @@ export const getCompassDirection = (deg) => {
   return (compassDirections[(val % 16)])
 }
 
-export const citiesAreNotEqual = (cities, city, stateName) => {
+export const citiesAreNotEqual = (cities, city, stateName, lat, lon) => {
   for (let i = 0; i < cities.length; i++) {
-    if (cities[i].city === city && cities[i].stateName === stateName) {
+    if ((cities[i].city === city && cities[i].stateName === stateName) || (cities[i].latitude === lat && cities[i.longitude === lon])) {
       return false;
     }
   }
