@@ -1,7 +1,7 @@
 //Day images
 import Clear from '../images/clear.png';
 import MainlyClear from '../images/lightCloud.png';
-import Shower from '../images/Shower.png';
+import Shower from '../images/shower.png';
 
 //Night images
 import NightClear from '../images/NightClear.png';
