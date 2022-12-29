@@ -330,9 +330,6 @@
   letter-spacing: 0.5px;
   cursor: pointer;
 }
-.search-menu .search-form .input input:hover {
-  transition: 0.5s;
-}
 .search-menu .search-form .input input::-moz-placeholder {
   font-size: 1rem;
   color: hsl(243deg, 10%, 66%);
@@ -361,9 +358,11 @@
   padding: 0.1rem;
   cursor: pointer;
 }
-.search-menu .search-form .input .cancel-search:hover {
-  transform: scale(0.95);
-  transition: 0.5s;
+@media screen and (min-width: 1000px) {
+  .search-menu .search-form .input .cancel-search:hover {
+    transform: scale(0.95);
+    transition: 0.5s;
+  }
 }
 .search-menu .search-form .search-btn {
   color: hsl(240deg, 9%, 91%);
@@ -376,9 +375,11 @@
   padding: 0.5rem;
   cursor: pointer;
 }
-.search-menu .search-form .search-btn:hover {
-  background-color: rgb(132, 81, 226);
-  transition: 0.5s;
+@media screen and (min-width: 1000px) {
+  .search-menu .search-form .search-btn:hover {
+    background-color: rgb(132, 81, 226);
+    transition: 0.5s;
+  }
 }
 .search-menu .locations-options-searched {
   display: flex;
@@ -395,9 +396,11 @@
   border-radius: 1px;
   cursor: pointer;
 }
-.search-menu .locations-options-searched .location-option:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
+@media screen and (min-width: 1000px) {
+  .search-menu .locations-options-searched .location-option:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
 }
 .search-menu .locations-options-searched .location-option .-info {
   flex: 1 1;
@@ -428,9 +431,11 @@
   align-items: center;
   cursor: pointer;
 }
-.search-menu .locations-options-searched .location-option .-btns-container #location-select-btn:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
+@media screen and (min-width: 1000px) {
+  .search-menu .locations-options-searched .location-option .-btns-container #location-select-btn:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
 }
 .search-menu .locations-options-searched .location-option .-btns-container #location-delete-btn {
   padding: 0.05rem;
@@ -443,9 +448,11 @@
   color: hsl(243deg, 10%, 66%);
   cursor: pointer;
 }
-.search-menu .locations-options-searched .location-option .-btns-container #location-delete-btn:hover {
-  transform: scale(0.95);
-  transition: 0.5s;
+@media screen and (min-width: 1000px) {
+  .search-menu .locations-options-searched .location-option .-btns-container #location-delete-btn:hover {
+    transform: scale(0.95);
+    transition: 0.5s;
+  }
 }
 .search-menu .locations-options-searching {
   display: flex;
@@ -464,9 +471,11 @@
   letter-spacing: 0.5px;
   font-weight: 500;
 }
-.search-menu .locations-options-searching .searching-option:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
+@media screen and (min-width: 1000px) {
+  .search-menu .locations-options-searching .searching-option:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
 }
 .search-menu .locations-options-searching .searching-option .-info h3 {
   color: hsl(240deg, 9%, 91%);
@@ -527,15 +536,17 @@
   background-color: hsl(244deg, 16%, 40%);
   cursor: pointer;
 }
-.buttons-section .temperatures-container .temperature:hover, .buttons-section .theme-btn-container .temperature:hover {
-  background-color: rgba(185, 171, 171, 0.719);
-  transition: 0.5s;
-}
 @media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .temperatures-container .temperature, .buttons-section .theme-btn-container .temperature {
     font-size: 2rem;
     width: 60px;
     height: 60px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .buttons-section .temperatures-container .temperature:hover, .buttons-section .theme-btn-container .temperature:hover {
+    background-color: rgba(185, 171, 171, 0.719);
+    transition: 0.5s;
   }
 }
 .buttons-section .temperatures-container .temperature.selected, .buttons-section .theme-btn-container .temperature.selected {
@@ -563,15 +574,17 @@
   background-color: hsl(240deg, 9%, 91%);
   color: hsl(234deg, 32%, 17%);
 }
-.buttons-section .theme-btn-container:hover {
-  background-color: rgba(185, 171, 171, 0.719);
-  transition: 0.5s;
-}
 @media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .theme-btn-container {
     font-size: 2rem;
     width: 60px;
     height: 60px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .buttons-section .theme-btn-container:hover {
+    background-color: rgba(185, 171, 171, 0.719);
+    transition: 0.5s;
   }
 }
 .buttons-section .configurations-icon {
@@ -593,15 +606,17 @@
   padding: 0.6rem;
   transition: 0.5s;
 }
-.buttons-section .configurations-icon:hover {
-  background-color: rgba(185, 171, 171, 0.719);
-  transition: 0.5s;
-}
 @media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .configurations-icon {
     font-size: 2rem;
     width: 60px;
     height: 60px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .buttons-section .configurations-icon:hover {
+    background-color: rgba(185, 171, 171, 0.719);
+    transition: 0.5s;
   }
 }
 .buttons-section .configurations-close-icon {
@@ -622,15 +637,17 @@
   cursor: pointer;
   padding: 0.6rem;
 }
-.buttons-section .configurations-close-icon:hover {
-  background-color: rgba(185, 171, 171, 0.719);
-  transition: 0.5s;
-}
 @media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .configurations-close-icon {
     font-size: 2rem;
     width: 60px;
     height: 60px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .buttons-section .configurations-close-icon:hover {
+    background-color: rgba(185, 171, 171, 0.719);
+    transition: 0.5s;
   }
 }
 .buttons-section.configurations-open .temperatures-container, .buttons-section.configurations-open .theme-btn-container {
@@ -679,13 +696,15 @@
   letter-spacing: 1px;
   cursor: pointer;
 }
-.weather-section .weather-mode-btns-container .weather-mode-btn:hover {
-  background-color: rgb(185, 171, 171);
-  transition: 0.5s;
-}
 .weather-section .weather-mode-btns-container .weather-mode-btn.selected {
   background-color: hsl(230deg, 5%, 45%);
   transition: 0.5s;
+}
+@media screen and (min-width: 1000px) {
+  .weather-section .weather-mode-btns-container .weather-mode-btn:hover {
+    background-color: rgb(185, 171, 171);
+    transition: 0.5s;
+  }
 }
 .weather-section .weather-list-container {
   display: flex;

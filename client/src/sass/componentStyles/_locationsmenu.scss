@@ -50,10 +50,6 @@
         outline: none;
         letter-spacing: .5px;
         cursor: pointer;
-      
-        &:hover {
-          transition: .5s;
-        }
 
         &::placeholder {
           font-size: 1rem;
@@ -75,11 +71,12 @@
         padding: .1rem;
         cursor: pointer;
       
-        &:hover {
-          transform: scale(0.95);
-          transition: .5s;
+        @media screen  and (min-width: 1000px){
+          &:hover {
+            transform: scale(0.95);
+            transition: .5s;
+          }
         }
-
       }
     }
 
@@ -94,9 +91,12 @@
       padding: .5rem;
       cursor: pointer;
       
-      &:hover {
-        background-color: rgb(132, 81, 226);
-        transition: .5s;
+
+      @media screen and (min-width: 1000px) {
+        &:hover {
+          background-color: rgb(132, 81, 226);
+          transition: .5s;
+        }
       }
     }
   }
@@ -142,10 +142,12 @@
           display: flex;
           align-items: center;
           cursor: pointer;
-      
-          &:hover {
-            transform: scale(1.05);
-            transition: .5s;
+
+          @media screen and (min-width:1000px) {
+            &:hover {
+              transform: scale(1.05);
+              transition: .5s;
+            }
           }
         }
 
@@ -159,10 +161,12 @@
           font-weight: 600;
           color: $Dark-second-text-color;
           cursor: pointer;
-      
-          &:hover {
-            transform: scale(0.95);
-            transition: .5s;
+          
+          @media screen and (min-width:1000px) {
+            &:hover {
+              transform: scale(0.95);
+              transition: .5s;
+            }
           }
         }
       }

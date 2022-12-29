@@ -10,9 +10,11 @@
   border-radius: 1px;
   cursor: pointer;
       
-  &:hover {
-    transform: scale(1.05);
-    transition: .5s;
+  @media screen and (min-width:1000px) {
+    &:hover {
+      transform: scale(1.05);
+      transition: .5s;
+    }
   }
 }
 
@@ -32,16 +34,18 @@
   font-weight: 600;
   background-color: $Changer-btns;
   cursor: pointer;
-      
-  &:hover {
-    background-color: rgba(185, 171, 171, 0.719);
-    transition: .5s;
-  }
 
   @media (min-width:650px) and (max-width: 1000px){
     font-size: 2rem;
     width: 60px;
     height: 60px;
+  }
+
+  @media screen and (min-width:1000px) {
+    &:hover {
+      background-color: rgba(185, 171, 171, 0.719);
+      transition: .5s;
+    }
   }
 }
 
@@ -58,15 +62,17 @@
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
-      
-  &:hover {
-    background-color: rgb(185, 171, 171);
-    transition: .5s;
-  }
 
   &.selected {
     background-color: $Dark-bg-btn;
     transition: .5s;
+  }
+
+  @media screen and (min-width: 1000px) {
+    &:hover {
+      background-color: rgb(185, 171, 171);
+      transition: .5s;
+    }
   }
 }
 
