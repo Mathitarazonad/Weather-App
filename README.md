@@ -1,12 +1,15 @@
 # Devchallenges.io - Weather App Solution
 
 This is a solution to the [Weather App challenge on DevChallenges.io](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv).
+### Preview
+
+<img src="./screenshots/desktop-dark.png" style="width: 1400; height: 700;"/>
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -21,6 +24,8 @@ This is a solution to the [Weather App challenge on DevChallenges.io](https://de
 
 Users should be able to:
 
+- See the current weather. 
+- See the daily weather.
 - View the optimal layout for the game depending on their device's screen size.
 - Select their current location by searching or via gps with a button.
 - Search for the weather of a city by searching.
@@ -30,31 +35,28 @@ The next challenges are created by my self to my self:
 
 - **Bonus**: Save countries that were searched and selected.
 - **Bonus**: Delete a saved country.
+- **Bonus**: See the hourly weather.
 - **Bonus**: Change between hourly and daily weather mode, and pass over the next hours.
 - **Bonus**: Change between dark and light mode.
 - **Bonus**: Add a dropdown menu.
 
-### Screenshot
+### Screenshots
 
 I only took a few screenshots of mobile and computer examples, the design for medium size devices like a tablet and others are very similar to the mobile design.
 
+[Mobile Today](./screenshots/mobile-today.png)
+
+[Mobile Daily](./screenshots/mobile-daily.png)
+
+[Mobile Details](./screenshots/mobile-details.png)
+
 [Mobile Menu](./screenshots/mobile-menu.png)
 
-[Mobile Design](./screenshots/mobile-design.png)
+[Desktop Dark Design](./screenshots/desktop-dark.png)
 
-[Mobile Rules](./screenshots/mobile-rules.png)
+[Desktop Light Design](./screenshots/desktop-light.png)
 
-[Mobile Results](./screenshots/mobile-results.png)
-
-[Tablet Design](./screenshots/tablet-design.png)
-
-[Desktop Menu](./screenshots/desktop-menu.png)
-
-[Desktop Design](./screenshots/desktop-design.png)
-
-[Desktop Rules](./screenshots/desktop-rules.png)
-
-[Desktop Results](./screenshots/desktop-results.png)
+[Desktop Menu](./screenshots/desktop-search.png)
 
 ### Links
 
@@ -77,6 +79,8 @@ I only took a few screenshots of mobile and computer examples, the design for me
 - [Express](https://expressjs.com/es/) - NodeJs Framework for Server
 - [Sass](https://sass-lang.com/) - CSS Preprocessor
 - [Vercel](https://vercel.com) - Hosting Page
+- [OpenMeteo API](https://open-meteo.com/) - Weather API
+- [GeoApify API](https://www.geoapify.com) - Geolocation API
 
 ### What I learned
 
@@ -92,7 +96,7 @@ At last but not less important, I started to use other platforms of hosting that
 
 *"Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect."*
 
-Well, how I said, I only study the basics basics of the backend, so I need to learn a lot about this part of the web development, now I understand the importance of having the basic knowledge about some backend and it is really useful. I thought about to start with Full-Stack apps, but I need to learn a lot more about the backend things before enter a completely new world, and at this moment, I don't think if it is a good idea to focus on several technologies like a full-stack developer or focus on only one, for example the frontend.
+Well, how I said, I only studied the basics basics of the backend, so I need to learn a lot about this part of the web development, now I understand the importance of having the basic knowledge about some backend and it is really useful. I thought about to start with Full-Stack apps, but I need to learn a lot more about the backend things before enter a completely new world, and at this moment, I don't think if it is a good idea to focus on several technologies like a full-stack developer or focus on only one, for example the frontend.
 
 ### Useful resources
 
