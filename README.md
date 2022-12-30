@@ -13,6 +13,7 @@ This is a solution to the [Weather App challenge on DevChallenges.io](https://de
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Process](#process)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
@@ -81,6 +82,14 @@ I only took a few screenshots of mobile and computer examples, the design for me
 - [Vercel](https://vercel.com) - Hosting Page
 - [OpenMeteo API](https://open-meteo.com/) - Weather API
 - [GeoApify API](https://www.geoapify.com) - Geolocation API
+
+### Process
+
+First of all, I needed to find two APIs, one for the location things, and another for the weather, the provided by the devChallenge page for this challenge didn't work so I decided to use GeoApify as the location API, and OpenMeteo as my weather API. Then I wanted to store my API key safely, and I learned that the best way to do this was storing it in an env file that were in a backend, so for the first time I entered the backend world and I learned some of the basics to run a backend service and do the things that I wanted.
+
+So the app works as follows, a location API searchs for the information of the location that the user wants to use, for example its current location, so this API sends data about a city by using coordinates. Before continuing with the weather things, I decided to store the locations that the user searched and selected to change between locations and their weather. With the information about the city that this API provides, then we can search for data about the weather of that current location, this weather API also needs to know about of course the coordinates, timezone, and the temperature format that the data will be sent. And finally with all of this data we can show to the user all the information that he wants.
+
+In this challenge I didn't reply the design that the challenges gives, for example, the air pressure, the weather API that I used don't gives data about the air pressure, so I changed for the apparent temperature. Also I added the state name for the cities and moved the temperature changers in a menu and added a light/dark mode changer. Another change but not less important is that a I add weather mode buttons to change it between daily mode that was in the challenge, and hourly mode that I decided to add but only with the next 15 hours. 
 
 ### What I learned
 
