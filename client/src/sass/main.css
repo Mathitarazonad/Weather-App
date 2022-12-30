@@ -515,9 +515,9 @@
 .buttons-section .temperatures-container, .buttons-section .theme-btn-container {
   -webkit-animation: config-close-animation 0.25s ease-out both;
           animation: config-close-animation 0.25s ease-out both;
-  display: flex;
   flex-direction: column;
   gap: 1rem;
+  pointer-events: none;
 }
 .buttons-section .temperatures-container .temperature, .buttons-section .theme-btn-container .temperature {
   transition: 0.5s;
@@ -570,7 +570,7 @@
   font-weight: 600;
   background-color: hsl(244deg, 16%, 40%);
   cursor: pointer;
-  transition: 0.5s;
+  display: none;
   background-color: hsl(240deg, 9%, 91%);
   color: hsl(234deg, 32%, 17%);
 }
@@ -604,7 +604,6 @@
   background-color: hsl(244deg, 16%, 40%);
   cursor: pointer;
   padding: 0.6rem;
-  transition: 0.5s;
 }
 @media (min-width: 650px) and (max-width: 1000px) {
   .buttons-section .configurations-icon {
@@ -651,6 +650,8 @@
   }
 }
 .buttons-section.configurations-open .temperatures-container, .buttons-section.configurations-open .theme-btn-container {
+  pointer-events: all;
+  display: flex;
   -webkit-animation: config-open-animation 0.25s ease-out both;
           animation: config-open-animation 0.25s ease-out both;
 }

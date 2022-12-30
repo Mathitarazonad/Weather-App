@@ -13,9 +13,9 @@
 
   .temperatures-container, .theme-btn-container {
     animation: config-close-animation .25s ease-out both;
-    display: flex;
     flex-direction: column;
     gap: 1rem;
+    pointer-events: none;
 
     .temperature {
       @include buttons ();
@@ -30,7 +30,7 @@
 
   .theme-btn-container {
     @include buttons();
-    transition: .5s;
+    display: none;
     background-color: $Dark-text-color;
     color: $Dark-sidebar-bg;
   }
@@ -38,7 +38,6 @@
   .configurations-icon {
     @include buttons();
     padding: .6rem;
-    transition: .5s;
   }
 
   .configurations-close-icon {
@@ -47,7 +46,9 @@
   }
 
   &.configurations-open {
-    .temperatures-container, .theme-btn-container {
+    .temperatures-container, .theme-btn-container {  
+      pointer-events: all;
+      display: flex;
       animation: config-open-animation .25s ease-out both;
     }
   }
